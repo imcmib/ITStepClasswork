@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ToggleButton
+        android:id="@+id/firstToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Вкл."
+        android:textOff="Выкл."/>
+
+    <ToggleButton
+        android:id="@+id/secondToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:textOn="Вкл."
+        android:textOff="Выкл."/>
+
+    <ToggleButton
+        android:id="@+id/thirdToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="Вкл."
+        android:textOff="Выкл."/>
+
+    <Button
+        android:id="@+id/toggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toggle"/>
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check"/>
+
+    <Button
+        android:id="@+id/uncheckButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Uncheck"/>
+</LinearLayout>

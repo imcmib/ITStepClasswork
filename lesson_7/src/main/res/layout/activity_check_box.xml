@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/firstCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CheckBox 1"/>
+
+    <CheckBox
+        android:id="@+id/secondCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="CheckBox 2"/>
+
+    <CheckBox
+        android:id="@+id/thirdCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CheckBox 3"/>
+
+    <Button
+        android:id="@+id/toggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toggle"/>
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check"/>
+
+    <Button
+        android:id="@+id/uncheckButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Uncheck"/>
+</LinearLayout>
