@@ -22,6 +22,8 @@
         <activity android:name=".ToggleButtonActivity"/>
         <activity android:name=".ImageButtonActivity"/>
         <activity android:name=".ProgressBarActivity"/>
+        <activity android:name=".SeekBarActivity"/>
+        <activity android:name=".RatingBarActivity"/>
     </application>
 
 </manifest>

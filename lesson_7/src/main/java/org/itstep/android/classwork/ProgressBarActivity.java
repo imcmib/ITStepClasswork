@@ -21,6 +21,7 @@ import android.widget.Toast;
 public class ProgressBarActivity extends Activity implements View.OnClickListener {
 
 	private static final String TAG = ProgressBarActivity.class.getSimpleName();
+
 	private ProgressBar mHorizontalProgressBar;
 
 	public static void startActivity(Activity context) {
@@ -44,11 +45,11 @@ public class ProgressBarActivity extends Activity implements View.OnClickListene
 	public void onClick(final View view) {
 		switch (view.getId()) {
 			case R.id.incrementButton:
-//				final int progress = mHorizontalProgressBar.getProgress() + 1;
-//				mHorizontalProgressBar.setProgress(progress);
+				final int progress = mHorizontalProgressBar.getProgress() + 1;
+				mHorizontalProgressBar.setProgress(progress);
 
-				mHorizontalProgressBar.incrementProgressBy(1);
-				mHorizontalProgressBar.incrementSecondaryProgressBy(2);
+//				mHorizontalProgressBar.incrementProgressBy(1);
+//				mHorizontalProgressBar.incrementSecondaryProgressBy(2);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

@@ -36,6 +36,8 @@ public class ToggleButtonActivity extends Activity implements View.OnClickListen
 		setContentView(R.layout.activity_toggle_button);
 
 		mFirstToggleButton = (ToggleButton) findViewById(R.id.firstToggleButton);
+		mFirstToggleButton.setTextOn("Text ON");
+		mFirstToggleButton.setTextOff("Text OFF");
 
 		final ToggleButton thirdToggleButton = (ToggleButton) findViewById(R.id.thirdToggleButton);
 		thirdToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

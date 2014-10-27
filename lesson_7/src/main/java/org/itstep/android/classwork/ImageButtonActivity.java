@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /*
@@ -35,11 +37,21 @@ public class ImageButtonActivity extends Activity implements View.OnClickListene
 
 		final ImageButton imageButton = (ImageButton) findViewById(R.id.imageButton);
 		imageButton.setOnClickListener(this);
+
+		Button button = new Button(this);
+		button.setId(R.id.id_button_1);
+		button.setOnClickListener(this);
+
+		LinearLayout rootLayout = (LinearLayout) findViewById(R.id.rootLayout);
+		rootLayout.addView(button);
 	}
 
 	@Override
 	public void onClick(final View view) {
 		switch (view.getId()) {
+			case R.id.id_button_1:
+				Toast.makeText(this, "Button", Toast.LENGTH_SHORT).show();
+				break;
 			case R.id.imageButton:
 				Toast.makeText(this,
 						getResources().getResourceName(view.getId()) + " clicked!",

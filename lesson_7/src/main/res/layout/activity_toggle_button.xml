@@ -7,9 +7,7 @@
     <ToggleButton
         android:id="@+id/firstToggleButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOn="Вкл."
-        android:textOff="Выкл."/>
+        android:layout_height="wrap_content"/>
 
     <ToggleButton
         android:id="@+id/secondToggleButton"

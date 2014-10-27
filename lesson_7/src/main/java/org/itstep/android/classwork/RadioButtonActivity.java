@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -37,18 +38,29 @@ public class RadioButtonActivity extends Activity implements View.OnClickListene
 		setContentView(R.layout.activity_radio_button);
 
 		mFirstRadioGroup = (RadioGroup) findViewById(R.id.firstRadioGroup);
-		mFirstRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+		mFirstRadioGroup.setOnCheckedChangeListener(
+				new RadioGroup.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(final RadioGroup group, final int checkedId) {
-				final View viewById = findViewById(checkedId);
+				final View viewById = group.findViewById(checkedId);
 				if (viewById != null && viewById instanceof RadioButton) {
 					final RadioButton radioButton = (RadioButton) viewById;
-					Log.d(TAG, getResources().getResourceName(checkedId) + ", checked: " + radioButton.isChecked());
+					Log.d(TAG, "RadioGroup: " + getResources().getResourceName(checkedId)
+							+ ", checked: " + radioButton.isChecked());
 				}
 			}
 		});
 
 		mFirstRadioButton = (RadioButton) findViewById(R.id.firstRadioButton);
+		mFirstRadioButton.setOnCheckedChangeListener(
+				new RadioButton.OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(final CompoundButton compoundButton,
+												 final boolean isChecked) {
+						Log.d(TAG, "RadioButton: " + getResources().getResourceName(compoundButton.getId())
+						+ ", checked: " + isChecked);
+					}
+				});
 
 		findViewById(R.id.toggleButton).setOnClickListener(this);
 		findViewById(R.id.checkButton).setOnClickListener(this);

@@ -29,6 +29,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.toggleButtonButton).setOnClickListener(this);
 		findViewById(R.id.imageButtonButton).setOnClickListener(this);
 		findViewById(R.id.progressBarButton).setOnClickListener(this);
+		findViewById(R.id.seekBarButton).setOnClickListener(this);
+		findViewById(R.id.ratingBarButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -48,6 +50,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.progressBarButton:
 				ProgressBarActivity.startActivity(this);
+				break;
+//			ImageView
+			case R.id.seekBarButton:
+				SeekBarActivity.startActivity(this);
+				break;
+			case R.id.ratingBarButton:
+				RatingBarActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
