@@ -3,7 +3,9 @@ package org.itstep.android.classwork;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 /*
@@ -33,8 +35,30 @@ public class ScrollViewActivity extends Activity {
 		for (int i = 0; i < 100; i++) {
 			final TextView textView = new TextView(this);
 			textView.setText(String.format("TextView #%d", i));
+			textView.setId(i);
 
 			linearLayout.addView(textView);
 		}
+
+		findViewById(R.id.scrollTo50Button).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(final View v) {
+				final View viewById = findViewById(50);
+				final int y = (int) viewById.getY();
+
+				ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
+//				scrollView.scrollTo(0, y);
+				scrollView.smoothScrollTo(0, y);
+			}
+		});
+
+		findViewById(R.id.scrollBy500Button).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(final View v) {
+				ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
+//				scrollView.scrollBy(0, 500);
+				scrollView.smoothScrollBy(0, 500);
+			}
+		});
 	}
 }

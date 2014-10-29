@@ -21,6 +21,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.chronometerViewButton).setOnClickListener(this);
 		findViewById(R.id.scrollViewViewButton).setOnClickListener(this);
 		findViewById(R.id.horizontalScrollViewViewButton).setOnClickListener(this);
+		findViewById(R.id.scrollViewWithHorizontalViewButton).setOnClickListener(this);
+		findViewById(R.id.switchButton).setOnClickListener(this);
+		findViewById(R.id.webViewButton).setOnClickListener(this);
+		findViewById(R.id.datePickerButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -46,6 +50,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.horizontalScrollViewViewButton:
 				HorizontalScrollViewActivity.startActivity(this);
+				break;
+			case R.id.scrollViewWithHorizontalViewButton:
+				ScrollViewWithHorizontalActivity.startActivity(this);
+				break;
+			case R.id.switchButton:
+				SwitchActivity.startActivity(this);
+				break;
+			case R.id.webViewButton:
+				WebViewActivity.startActivity(this);
+				break;
+			case R.id.datePickerButton:
+				DatePickerActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

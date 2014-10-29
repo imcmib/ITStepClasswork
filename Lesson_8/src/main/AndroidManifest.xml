@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.itstep.android.classwork" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -24,6 +26,10 @@
         <activity android:name=".ChronometerActivity"/>
         <activity android:name=".ScrollViewActivity"/>
         <activity android:name=".HorizontalScrollViewActivity"/>
+        <activity android:name=".ScrollViewWithHorizontalActivity"/>
+        <activity android:name=".SwitchActivity"/>
+        <activity android:name=".WebViewActivity"/>
+        <activity android:name=".DatePickerActivity"/>
     </application>
 
 </manifest>
