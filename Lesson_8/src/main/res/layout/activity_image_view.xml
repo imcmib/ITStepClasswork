@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radioGroup"
+        android:src="@drawable/ic_launcher"
+        android:contentDescription="@null"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/centerRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="center"/>
+
+        <RadioButton
+            android:id="@+id/centerCropRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="centerCrop"/>
+
+        <RadioButton
+            android:id="@+id/centerInsideRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="centerInside"/>
+
+        <RadioButton
+            android:id="@+id/fitCenterRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="fitCenter"/>
+
+        <RadioButton
+            android:id="@+id/fitStartRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fitStart"/>
+
+        <RadioButton
+            android:id="@+id/fitEndRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fitEnd"/>
+
+        <RadioButton
+            android:id="@+id/fitXYRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="firXY"/>
+
+        <RadioButton
+            android:id="@+id/matrixRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="matrix"/>
+    </RadioGroup>
+</RelativeLayout>
