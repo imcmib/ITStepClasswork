@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lesson_9</string>
+
+    <string-array name="texts">
+        <item>Some text 1</item>
+        <item>Some text 2</item>
+        <item>Some text 3</item>
+        <item>Some text 4</item>
+        <item>Some text 5</item>
+    </string-array>
+
+</resources>
