@@ -16,6 +16,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		findViewById(R.id.simpleAdapterButton).setOnClickListener(this);
 		findViewById(R.id.arrayAdapterButton).setOnClickListener(this);
+		findViewById(R.id.customArrayAdapterButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -26,6 +27,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.arrayAdapterButton:
 				ArrayAdapterActivity.startActivity(this);
+				break;
+			case R.id.customArrayAdapterButton:
+				CustomArrayAdapterActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

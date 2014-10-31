@@ -17,4 +17,10 @@
         android:layout_height="wrap_content"
         android:text="ArrayAdapter"/>
 
+    <Button
+        android:id="@+id/customArrayAdapterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Custom ArrayAdapter"/>
+
 </LinearLayout>
