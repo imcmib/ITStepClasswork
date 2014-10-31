@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextClock;
+import android.widget.TextView;
 
 /*
  * ImageViewActivity.java
@@ -18,8 +19,7 @@ import android.widget.TextClock;
  */
 public class TextClockActivity extends Activity implements View.OnClickListener {
 
-	private static final String TAG = TextClockActivity.class.getSimpleName()
-;
+	private static final String TAG = TextClockActivity.class.getSimpleName();
 	private TextClock mTextClock;
 
 	public static void startActivity(Activity context) {
@@ -35,6 +35,9 @@ public class TextClockActivity extends Activity implements View.OnClickListener 
 
 		mTextClock = (TextClock) findViewById(R.id.textClock);
 
+		TextView textView = (TextView) findViewById(R.id.timeFormatTextView);
+		textView.setText(String.valueOf(mTextClock.is24HourModeEnabled()));
+
 		findViewById(R.id.format12Button).setOnClickListener(this);
 		findViewById(R.id.format24Button).setOnClickListener(this);
 		findViewById(R.id.formatCustomButton).setOnClickListener(this);
@@ -44,13 +47,25 @@ public class TextClockActivity extends Activity implements View.OnClickListener 
 	public void onClick(final View view) {
 		switch (view.getId()) {
 			case R.id.format12Button:
-				mTextClock.setFormat12Hour(TextClock.DEFAULT_FORMAT_12_HOUR);
+				if (mTextClock.is24HourModeEnabled()) {
+					mTextClock.setFormat24Hour(TextClock.DEFAULT_FORMAT_12_HOUR);
+				} else {
+					mTextClock.setFormat12Hour(TextClock.DEFAULT_FORMAT_12_HOUR);
+				}
 				break;
 			case R.id.format24Button:
-				mTextClock.setFormat12Hour(TextClock.DEFAULT_FORMAT_24_HOUR);
+				if (mTextClock.is24HourModeEnabled()) {
+					mTextClock.setFormat24Hour(TextClock.DEFAULT_FORMAT_24_HOUR);
+				} else {
+					mTextClock.setFormat12Hour(TextClock.DEFAULT_FORMAT_24_HOUR);
+				}
 				break;
 			case R.id.formatCustomButton:
-				mTextClock.setFormat12Hour("hh:mm:ss");
+				if (mTextClock.is24HourModeEnabled()) {
+					mTextClock.setFormat24Hour("hh:mm:ss");
+				} else {
+					mTextClock.setFormat12Hour("hh:mm:ss");
+				}
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

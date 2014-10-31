@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.DigitalClock;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 /*
  * ImageViewActivity.java
@@ -15,10 +16,10 @@ import android.widget.DigitalClock;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class DigitalClockActivity extends Activity {
+public class WebViewActivity extends Activity {
 
 	public static void startActivity(Activity context) {
-	    final Intent intent = new Intent(context, DigitalClockActivity.class);
+	    final Intent intent = new Intent(context, WebViewActivity.class);
 
 	    context.startActivity(intent);
 	}
@@ -26,13 +27,14 @@ public class DigitalClockActivity extends Activity {
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_digital_clock);
+		setContentView(R.layout.activity_web_view);
 
-		findViewById(R.id.setTextButton).setOnClickListener(new View.OnClickListener() {
+		final WebView webView = (WebView) findViewById(R.id.webView);
+
+		findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View v) {
-				DigitalClock digitalClock = (DigitalClock) findViewById(R.id.digitalClock);
-				digitalClock.setText("Some text");
+				webView.loadUrl("http://ya.ru");
 			}
 		});
 	}

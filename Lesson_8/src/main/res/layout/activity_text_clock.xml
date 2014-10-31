@@ -3,6 +3,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/timeFormatTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <TextClock
         android:id="@+id/textClock"
         android:layout_width="match_parent"

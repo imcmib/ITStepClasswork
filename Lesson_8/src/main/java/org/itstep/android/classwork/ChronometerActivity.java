@@ -67,7 +67,7 @@ public class ChronometerActivity extends Activity implements View.OnClickListene
 				mChronometer.stop();
 				break;
 			case R.id.resetButton:
-				mChronometer.setBase(SystemClock.elapsedRealtime());
+				mChronometer.setBase(SystemClock.elapsedRealtime() + 60 * 1000);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
