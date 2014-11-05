@@ -1,10 +1,12 @@
-package org.itstep.android.classwork;
+package org.itstep.android.classwork.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+
+import org.itstep.android.classwork.R;
 
 public class AutoCompleteTextViewActivity extends Activity {
 

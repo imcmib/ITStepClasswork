@@ -27,4 +27,27 @@
         android:layout_height="wrap_content"
         android:text="ListView"/>
 
+    <Button
+        android:id="@+id/listActivityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListActivity"/>
+
+    <Button
+        android:id="@+id/itemsAdapterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ItemsAdapter"/>
+
+    <Button
+        android:id="@+id/componentsAdapterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ComponentsAdapter"/>
+
+    <Button
+        android:id="@+id/viewHolderAdapterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewHolderAdapter"/>
 </LinearLayout>
