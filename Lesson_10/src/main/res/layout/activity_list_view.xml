@@ -21,6 +21,13 @@
         android:id="@+id/fillButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/fillAdapterButton"
         android:text="Fill list"/>
+
+    <Button
+        android:id="@+id/fillAdapterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Fill Adapter"/>
 </RelativeLayout>

@@ -33,7 +33,8 @@ public class ItemsAdapterActivity extends Activity implements AdapterView.OnItem
 
 		Item item;
 		for (int i = 0; i < ITEMS_COUNT; i++) {
-			item = new Item(i, String.format("Item %d", i));
+			final String name = String.format("Item %d", i);
+			item = new Item(i, name);
 			items.add(item);
 		}
 

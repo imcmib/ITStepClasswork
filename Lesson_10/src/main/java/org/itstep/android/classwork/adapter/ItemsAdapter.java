@@ -50,7 +50,8 @@ public class ItemsAdapter extends ArrayAdapter<Item> {
 
 	@Override
 	public long getItemId(final int position) {
-		return getItem(position).getId();
+		final Item item = getItem(position);
+		return item.getId();
 	}
 
 	@Override

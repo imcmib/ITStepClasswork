@@ -32,7 +32,7 @@ public class AutoCompleteTextViewActivity extends Activity {
 				(AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
 
 		autoCompleteTextView.setAdapter(adapter);
-		autoCompleteTextView.setThreshold(1);
+		autoCompleteTextView.setThreshold(3);
 		autoCompleteTextView.setCompletionHint("Hint");
 	}
 }
