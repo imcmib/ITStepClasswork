@@ -1,8 +1,10 @@
 package org.itstep.android.classwork;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
@@ -24,16 +26,18 @@ public class GridViewActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_grid_view);
 
-		final List<String> data = generateStringList(40);
+		final List<String> data = generateStringList(100);
 
-		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, data);
+		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+				this, R.layout.simple_grid_item, android.R.id.text1, data);
 
 		final GridView gridView = (GridView) findViewById(R.id.gridView);
 		gridView.setAdapter(adapter);
 
-		gridView.setNumColumns(3);
+		gridView.setNumColumns(data.size());
 //		gridView.setNumColumns(GridView.AUTO_FIT);
-//		gridView.setColumnWidth(80);
+//		final int width = (int) Utils.convertPixelsToDp(this, 120);
+//		gridView.setColumnWidth(width);
 //		gridView.setVerticalSpacing(5);
 //		gridView.setHorizontalSpacing(5);
 //		gridView.setStretchMode(GridView.NO_STRETCH);

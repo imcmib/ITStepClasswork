@@ -51,7 +51,7 @@ public class ImagesAdapter extends BaseAdapter {
 
 	@Override
 	public long getItemId(int position) {
-		return mImage[position];
+		return position;
 	}
 
 	@Override

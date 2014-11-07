@@ -17,6 +17,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.spinnerButton).setOnClickListener(this);
 		findViewById(R.id.galleryButton).setOnClickListener(this);
 		findViewById(R.id.gridViewButton).setOnClickListener(this);
+		findViewById(R.id.customGalleryButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -30,6 +31,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.gridViewButton:
 				GridViewActivity.startActivity(this);
+				break;
+			case R.id.customGalleryButton:
+				CustomGalleryActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

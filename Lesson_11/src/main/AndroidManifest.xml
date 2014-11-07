@@ -20,6 +20,7 @@
         <activity android:name=".SpinnerActivity"/>
         <activity android:name=".GalleryActivity"/>
         <activity android:name=".GridViewActivity"/>
+        <activity android:name=".CustomGalleryActivity"/>
     </application>
 
 </manifest>

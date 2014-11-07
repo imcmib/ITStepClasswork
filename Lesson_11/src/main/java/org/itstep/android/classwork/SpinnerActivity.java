@@ -32,15 +32,16 @@ public class SpinnerActivity extends Activity {
 
 		final List<String> data = generateStringList(20);
 
-		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data);
+		final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+				this, android.R.layout.simple_spinner_item, data);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		final Spinner spinner = (Spinner) findViewById(R.id.spinner);
 		spinner.setAdapter(adapter);
 
-//		spinner.setPrompt("Title");
+		spinner.setPrompt("Title");
 
-//		spinner.setSelection(2);
+		spinner.setSelection(2);
 
 		final List<Item> items = generateItemsList(30);
 
@@ -61,8 +62,7 @@ public class SpinnerActivity extends Activity {
 			}
 		});
 
-
-		itemsSpinner.setVisibility(View.GONE);
+//		itemsSpinner.setVisibility(View.GONE);
 
 		findViewById(R.id.setPositionButton).setOnClickListener(new View.OnClickListener() {
 			@Override
