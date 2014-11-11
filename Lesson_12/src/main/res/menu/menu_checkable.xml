@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="all">
+
+        <item android:title="Check 0"/>
+        <item android:title="Check 1"/>
+        <item android:title="Check 2"/>
+        <item android:title="Check 3"/>
+        <item android:title="Check 4"/>
+    </group>
+
+    <group
+        android:checkableBehavior="single">
+
+        <item android:title="Radio 0"/>
+        <item android:title="Radio 1"/>
+        <item android:title="Radio 2"/>
+        <item android:title="Radio 3"/>
+        <item android:title="Radio 4"/>
+    </group>
+</menu>

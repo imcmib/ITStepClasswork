@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item type="id" name="menu_add">1</item>
+    <item type="id" name="menu_edit">2</item>
+    <item type="id" name="menu_delete">3</item>
+    <item type="id" name="menu_copy">4</item>
+    <item type="id" name="menu_paste">5</item>
+    <item type="id" name="menu_exit">6</item>
+
+    <item type="id" name="menu_group_main">100</item>
+    <item type="id" name="menu_group_extended">101</item>
+
+</resources>

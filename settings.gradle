@@ -1,1 +1,1 @@
-include ':Lesson_10', ':Lesson_11', 'Lesson_7'
+include 'Lesson_6', 'Lesson_7', 'Lesson_8', 'Lesson_9', ':Lesson_10', ':Lesson_11', ':Lesson_12'
