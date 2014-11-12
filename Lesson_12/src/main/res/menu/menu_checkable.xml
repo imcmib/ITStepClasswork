@@ -1,9 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:title="Check 0"
+          android:checkable="true"
+          android:checked="false"/>
+
     <group
         android:checkableBehavior="all">
 
-        <item android:title="Check 0"/>
         <item android:title="Check 1"/>
         <item android:title="Check 2"/>
         <item android:title="Check 3"/>

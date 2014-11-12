@@ -54,18 +54,18 @@ public class SubMenuActivity extends Activity {
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu) {
-		final SubMenu fileSubMenu = menu.addSubMenu(R.id.menu_group_main, 0, 0, "File");
-		fileSubMenu.add(R.id.menu_group_main, R.id.menu_add, 0, "Add");
-		fileSubMenu.add(R.id.menu_group_main, R.id.menu_edit, 0, "Edit");
-		fileSubMenu.add(R.id.menu_group_main, R.id.menu_delete, 3, "Delete");
+//		final SubMenu fileSubMenu = menu.addSubMenu(R.id.menu_group_main, 0, 0, "File");
+//		fileSubMenu.add(R.id.menu_group_main, R.id.menu_add, 0, "Add");
+//		fileSubMenu.add(R.id.menu_group_main, R.id.menu_edit, 0, "Edit");
+//		fileSubMenu.add(R.id.menu_group_main, R.id.menu_delete, 3, "Delete");
+//
+//		final SubMenu textSubMenu = menu.addSubMenu(R.id.menu_group_extended, 0, 0, "Text");
+//		textSubMenu.add(R.id.menu_group_extended, R.id.menu_copy, 1, "Copy");
+//		textSubMenu.add(R.id.menu_group_extended, R.id.menu_paste, 2, "Paste");
+//
+//		menu.add(R.id.menu_group_main, R.id.menu_exit, 4, "Exit");
 
-		final SubMenu textSubMenu = menu.addSubMenu(R.id.menu_group_extended, 0, 0, "Text");
-		textSubMenu.add(R.id.menu_group_extended, R.id.menu_copy, 1, "Copy");
-		textSubMenu.add(R.id.menu_group_extended, R.id.menu_paste, 2, "Paste");
-
-		menu.add(R.id.menu_group_main, R.id.menu_exit, 4, "Exit");
-
-//		getMenuInflater().inflate(R.menu.menu_sub, menu);
+		getMenuInflater().inflate(R.menu.menu_sub, menu);
 
 		return super.onCreateOptionsMenu(menu);
 	}

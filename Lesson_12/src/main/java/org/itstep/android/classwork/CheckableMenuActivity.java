@@ -25,18 +25,18 @@ public class CheckableMenuActivity extends Activity {
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu) {
-		for (int i = 0; i < 5; i++) {
-			menu.add(R.id.menu_group_main, i, Menu.NONE, String.format("Check %d", i));
-		}
+//		for (int i = 0; i < 5; i++) {
+//			menu.add(R.id.menu_group_main, i, Menu.NONE, String.format("Check %d", i));
+//		}
+//
+//		for (int i = 0; i < 5; i++) {
+//			menu.add(R.id.menu_group_extended, i, Menu.NONE, String.format("Radio %d", i));
+//		}
+//
+//		menu.setGroupCheckable(R.id.menu_group_main, true, false);
+//		menu.setGroupCheckable(R.id.menu_group_extended, true, true);
 
-		for (int i = 0; i < 5; i++) {
-			menu.add(R.id.menu_group_extended, i, Menu.NONE, String.format("Radio %d", i));
-		}
-
-		menu.setGroupCheckable(R.id.menu_group_main, true, false);
-		menu.setGroupCheckable(R.id.menu_group_extended, true, true);
-
-//		getMenuInflater().inflate(R.menu.menu_checkable, menu);
+		getMenuInflater().inflate(R.menu.menu_checkable, menu);
 
 		return super.onCreateOptionsMenu(menu);
 	}

@@ -53,14 +53,14 @@ public class GroupMenuActivity extends Activity {
 	 */
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu) {
-		menu.add(R.id.menu_group_main, R.id.menu_add, 0, "Add");
-		menu.add(R.id.menu_group_main, R.id.menu_edit, 0, "Edit");
-		menu.add(R.id.menu_group_main, R.id.menu_delete, 3, "Delete");
-		menu.add(R.id.menu_group_extended, R.id.menu_copy, 1, "Copy");
-		menu.add(R.id.menu_group_extended, R.id.menu_paste, 2, "Paste");
-		menu.add(R.id.menu_group_main, R.id.menu_exit, 4, "Exit");
+//		menu.add(R.id.menu_group_main, R.id.menu_add, 0, "Add");
+//		menu.add(R.id.menu_group_main, R.id.menu_edit, 0, "Edit");
+//		menu.add(R.id.menu_group_main, R.id.menu_delete, 3, "Delete");
+//		menu.add(R.id.menu_group_extended, R.id.menu_copy, 1, "Copy");
+//		menu.add(R.id.menu_group_extended, R.id.menu_paste, 2, "Paste");
+//		menu.add(R.id.menu_group_main, R.id.menu_exit, 4, "Exit");
 
-//		getMenuInflater().inflate(R.menu.menu_group, menu);
+		getMenuInflater().inflate(R.menu.menu_group, menu);
 
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -74,8 +74,9 @@ public class GroupMenuActivity extends Activity {
 		final int selectionStart = mEditText.getSelectionStart();
 		final int selectionEnd = mEditText.getSelectionEnd();
 		final int selectedCharsCount = selectionEnd - selectionStart;
+		final boolean visible = selectedCharsCount > 0;
 
-		menu.setGroupVisible(R.id.menu_group_extended, selectedCharsCount > 0);
+		menu.setGroupVisible(R.id.menu_group_extended, visible);
 
 		return super.onPrepareOptionsMenu(menu);
 	}

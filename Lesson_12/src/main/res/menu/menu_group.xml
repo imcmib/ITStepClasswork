@@ -10,19 +10,19 @@
     </item>
     <item
         android:id="@id/menu_delete"
-        android:orderInCategory="3"
+        android:orderInCategory="1"
         android:title="Delete">
     </item>
     <group
         android:id="@id/menu_group_extended">
         <item
             android:id="@id/menu_copy"
-            android:orderInCategory="1"
+            android:orderInCategory="0"
             android:title="Copy">
         </item>
         <item
             android:id="@id/menu_paste"
-            android:orderInCategory="2"
+            android:orderInCategory="0"
             android:title="Paste">
         </item>
     </group>

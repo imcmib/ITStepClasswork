@@ -5,28 +5,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.itstep.android.classwork.R;
-import org.itstep.android.classwork.model.Item;
+import org.itstep.android.classwork.model.GalleryImage;
 
 import java.util.List;
 
 /*
- * ItemsAdapter.java
+ * GalleryAdapter.java
  *
- * Created by aivanchenko on 05.11.2014, 16:25
+ * Created by mib on 07.11.14, 20:08
  *
  * Copyright(c) 2014 Provectus IT Company, Inc.  All Rights Reserved.
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class ViewHolderAdapter extends ArrayAdapter<Item> implements View.OnClickListener {
+public class GalleryAdapter extends ArrayAdapter<GalleryImage> {
 
 	private final LayoutInflater mLayoutInflater;
 	private final int mLayoutResId;
 
-	public ViewHolderAdapter(final Context context, final int resource, final List<Item> objects) {
+	public GalleryAdapter(final Context context, final int resource, final List<GalleryImage> objects) {
 		super(context, resource, objects);
 
 		mLayoutInflater = LayoutInflater.from(context);
@@ -41,32 +42,27 @@ public class ViewHolderAdapter extends ArrayAdapter<Item> implements View.OnClic
 			convertView = mLayoutInflater.inflate(mLayoutResId, parent, false);
 
 			viewHolder = new ViewHolder();
-			viewHolder.idTextView = (TextView) convertView.findViewById(R.id.idTextView);
-			viewHolder.idTextView.setOnClickListener(this);
-			viewHolder.idTextView.setTag(position);
-
+			viewHolder.imageView = (ImageView) convertView.findViewById(R.id.imageView);
 			viewHolder.nameTextView = (TextView) convertView.findViewById(R.id.nameTextView);
+			viewHolder.descriptionTextView = (TextView) convertView.findViewById(R.id.descriptionTextView);
 
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		final Item item = getItem(position);
+		final GalleryImage galleryImage = getItem(position);
 
-		viewHolder.idTextView.setText(String.valueOf(item.getId()));
-		viewHolder.nameTextView.setText(item.getName());
+		viewHolder.imageView.setImageResource(galleryImage.getImageResId());
+		viewHolder.nameTextView.setText(galleryImage.getName());
+		viewHolder.descriptionTextView.setText(galleryImage.getDescription());
 
 		return convertView;
 	}
 
-	@Override
-	public void onClick(final View v) {
-		v.getTag();
-	}
-
 	private static class ViewHolder {
-		public TextView idTextView;
-		public TextView nameTextView;
+		ImageView imageView;
+		TextView nameTextView;
+		TextView descriptionTextView;
 	}
 }

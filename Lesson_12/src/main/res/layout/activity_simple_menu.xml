@@ -20,4 +20,10 @@
         android:layout_height="wrap_content"
         android:text="Close Menu"/>
 
+    <Button
+        android:id="@+id/toggleActionBarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toggle Action Bar"/>
+
 </LinearLayout>

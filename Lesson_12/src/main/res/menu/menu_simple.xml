@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_simple_1"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_2"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_3"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_4"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_5"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_6"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_7"
+        android:title="Simple 1"
+        android:titleCondensed="Text"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@android:drawable/ic_menu_add"/>
+
+    <item
+        android:id="@+id/action_simple_8"
+        android:title="Simple 2"/>
+
+</menu>
