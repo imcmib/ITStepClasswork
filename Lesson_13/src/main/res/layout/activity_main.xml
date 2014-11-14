@@ -50,4 +50,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Custom AlertDialog"/>
+
+    <Button
+        android:id="@+id/dialogsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialogs"/>
 </LinearLayout>

@@ -23,6 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.checkAlertDialogButton).setOnClickListener(this);
 		findViewById(R.id.autoCloseAlertDialogButton).setOnClickListener(this);
 		findViewById(R.id.customAlertDialogButton).setOnClickListener(this);
+		findViewById(R.id.dialogsButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -48,6 +49,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.customAlertDialogButton:
 				CustomAlertDialogActivity.startActivity(this);
+				break;
+			case R.id.dialogsButton:
+				DialogsActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

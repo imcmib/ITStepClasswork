@@ -23,6 +23,9 @@
         <activity android:name=".CheckAlertDialogActivity"/>
         <activity android:name=".AutoCloseAlertDialogActivity"/>
         <activity android:name=".CustomAlertDialogActivity"/>
+        <activity android:name=".DialogsActivity"/>
+        <activity android:name=".DatePickerDialogActivity"/>
+        <activity android:name=".TimePickerDialogActivity"/>
     </application>
 
 </manifest>
