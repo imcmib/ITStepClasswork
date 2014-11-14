@@ -36,6 +36,7 @@ public class ActivityAlertDialogActivity extends Activity implements View.OnClic
 		setContentView(R.layout.activity_button);
 
 		findViewById(R.id.button).setOnClickListener(this);
+		findViewById(R.id.button2).setOnClickListener(this);
 	}
 
 	@Override
@@ -43,6 +44,9 @@ public class ActivityAlertDialogActivity extends Activity implements View.OnClic
 		switch (view.getId()) {
 			case R.id.button:
 				showDialog(DIALOG_ID_MESSAGE);
+				break;
+			case R.id.button2:
+				showDialog(2);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
@@ -80,7 +84,12 @@ public class ActivityAlertDialogActivity extends Activity implements View.OnClic
 									}
 								});
 
-				return builder.create();
+				final Dialog alertDialog = builder.create();
+				return alertDialog;
+			case 2:
+				AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+				builder2.setMessage("Dialog 2");
+				return builder2.create();
 			default:
 				return null;
 		}

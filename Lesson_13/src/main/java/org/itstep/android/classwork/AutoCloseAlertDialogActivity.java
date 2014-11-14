@@ -66,6 +66,6 @@ public class AutoCloseAlertDialogActivity extends Activity implements View.OnCli
 				alert.dismiss();
 				timer.cancel();
 			}
-		}, TimeUnit.SECONDS.toMillis(5));
+		}, TimeUnit.MINUTES.toMillis(5));
 	}
 }

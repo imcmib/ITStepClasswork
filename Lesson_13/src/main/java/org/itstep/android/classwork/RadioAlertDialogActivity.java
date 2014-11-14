@@ -64,10 +64,11 @@ public class RadioAlertDialogActivity extends Activity implements View.OnClickLi
 			case DIALOG_ID_LIST:
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle("Select item");
-				builder.setSingleChoiceItems(ITEMS, -1, new DialogInterface.OnClickListener() {
+				builder.setSingleChoiceItems(ITEMS, 1, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int item) {
 						Toast.makeText(getApplicationContext(), "Your choice: " + ITEMS[item], Toast.LENGTH_SHORT).show();
+						dialog.dismiss();
 					}
 				});
 				builder.setCancelable(false);

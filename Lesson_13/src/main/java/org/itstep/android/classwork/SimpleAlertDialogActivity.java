@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 /*
  * SimpleAlertDialogActivity.java
@@ -17,7 +18,8 @@ import android.view.View;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class SimpleAlertDialogActivity extends Activity implements View.OnClickListener {
+public class SimpleAlertDialogActivity extends Activity implements View.OnClickListener,
+		DialogInterface.OnClickListener {
 
 	private static final String TAG = SimpleAlertDialogActivity.class.getSimpleName();
 
@@ -52,34 +54,43 @@ public class SimpleAlertDialogActivity extends Activity implements View.OnClickL
 		builder.setTitle("Some title")
 				.setMessage("Some message")
 				.setIcon(R.drawable.ic_launcher)
-				.setCancelable(false)
-				.setNegativeButton("Close",
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						})
-//				.setPositiveButton("Ok",
-//						new DialogInterface.OnClickListener() {
-//							public void onClick(DialogInterface dialog, int id) {
-//								dialog.cancel();
-//							}
-//						})
-//				.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//					@Override
-//					public void onCancel(final DialogInterface dialog) {
-//						Log.d(TAG, "onCancel");
-//					}
-//				})
-//				.setOnDismissListener(new DialogInterface.OnDismissListener() {
-//					@Override
-//					public void onDismiss(final DialogInterface dialog) {
-//						Log.d(TAG, "onDismiss");
-//					}
-//				})
-				;
+				.setCancelable(true)
+				.setNegativeButton("Close", this)
+				.setNeutralButton("Hide", this)
+				.setPositiveButton("Ok", this)
+				.setOnCancelListener(new DialogInterface.OnCancelListener() {
+					@Override
+					public void onCancel(final DialogInterface dialog) {
+						Toast.makeText(SimpleAlertDialogActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+						Log.d(TAG, "onCancel");
+						//						dialog.dismiss();
+					}
+				})
+				.setOnDismissListener(new DialogInterface.OnDismissListener() {
+					@Override
+					public void onDismiss(final DialogInterface dialog) {
+						Log.d(TAG, "onDismiss");
+					}
+				});
 
 		final AlertDialog alert = builder.create();
 		alert.show();
+	}
+
+	@Override
+	public void onClick(final DialogInterface dialog, final int which) {
+		final String button;
+		switch (which) {
+			case AlertDialog.BUTTON_POSITIVE:
+				button = "Positive";
+				break;
+			case AlertDialog.BUTTON_NEGATIVE:
+				button = "Negative";
+				break;
+			default:
+				button = "Neutral";
+				break;
+		}
+		Toast.makeText(this, button, Toast.LENGTH_SHORT).show();
 	}
 }

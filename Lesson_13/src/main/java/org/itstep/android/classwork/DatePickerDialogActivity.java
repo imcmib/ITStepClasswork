@@ -1,6 +1,7 @@
 package org.itstep.android.classwork;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +19,8 @@ import android.widget.Toast;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class DatePickerDialogActivity extends Activity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
+public class DatePickerDialogActivity extends Activity implements View.OnClickListener,
+		DatePickerDialog.OnDateSetListener {
 
 	private static final String TAG = DatePickerDialogActivity.class.getSimpleName();
 
@@ -53,13 +55,14 @@ public class DatePickerDialogActivity extends Activity implements View.OnClickLi
 		final int month = 11;
 		final int day = 14;
 
-		final DatePickerDialog datePickerDialog = new DatePickerDialog(this, this, year, month, day);
+		final DatePickerDialog datePickerDialog =
+				new DatePickerDialog(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK, this, year, month, day);
 		datePickerDialog.show();
 	}
 
 	@Override
 	public void onDateSet(final DatePicker view, final int year, final int monthOfYear, final int dayOfMonth) {
-		final String date = String.format("%d/%d/%d", dayOfMonth, monthOfYear, year);
+		final String date = String.format("%d/%d/%d", dayOfMonth, monthOfYear + 1, year);
 		Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
 	}
 }

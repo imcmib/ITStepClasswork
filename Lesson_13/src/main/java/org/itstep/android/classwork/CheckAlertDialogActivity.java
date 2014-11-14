@@ -64,14 +64,26 @@ public class CheckAlertDialogActivity extends Activity implements View.OnClickLi
 			case DIALOG_ID_LIST:
 				final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle("Select item");
-				final boolean[] selected = new boolean[ITEMS.length];
+				final boolean[] selected = new boolean[] {
+					false, true, false
+				};
 				builder.setMultiChoiceItems(ITEMS, selected, new DialogInterface.OnMultiChoiceClickListener() {
 					@Override
 					public void onClick(final DialogInterface dialog, final int which, final boolean isChecked) {
 						Toast.makeText(getApplicationContext(), String.format("%s - %s", ITEMS[which], isChecked), Toast.LENGTH_SHORT).show();
+						selected[which] = isChecked;
 					}
 				});
-				builder.setCancelable(false);
+				builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(final DialogInterface dialog, final int which) {
+						StringBuilder message= new StringBuilder();
+						for (int i = 0; i < selected.length; i++) {
+							message.append(ITEMS[i] + " " + selected[i] + "\n");
+						}
+						Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+					}
+				});
 				return builder.create();
 			default:
 				return null;

@@ -35,6 +35,9 @@ public class DialogsActivity extends Activity implements View.OnClickListener {
 			case R.id.timePickerDialog:
 				TimePickerDialogActivity.startActivity(this);
 				break;
+			case R.id.progressDialog:
+				ProgressDialogActivity.startActivity(this);
+				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
 				break;

@@ -70,10 +70,18 @@ public class ListAlertDialogActivity extends Activity implements View.OnClickLis
 						Toast.makeText(getApplicationContext(), "Your choice: " + ITEMS[item], Toast.LENGTH_SHORT).show();
 					}
 				});
+//				builder.setMessage("Message");
 				builder.setCancelable(false);
+				builder.setPositiveButton("OK", null);
 				return builder.create();
 			default:
 				return null;
 		}
+	}
+
+	@Override
+	protected void onPrepareDialog(final int id, final Dialog dialog) {
+		Log.d(TAG, "onPrepareDialog: " + id);
+		super.onPrepareDialog(id, dialog);
 	}
 }

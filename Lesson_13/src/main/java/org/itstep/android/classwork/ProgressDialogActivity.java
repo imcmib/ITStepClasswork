@@ -1,15 +1,12 @@
 package org.itstep.android.classwork;
 
 import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.DatePicker;
-import android.widget.TimePicker;
-import android.widget.Toast;
 
 /*
  * SimpleAlertDialogActivity.java
@@ -20,13 +17,12 @@ import android.widget.Toast;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class TimePickerDialogActivity extends Activity implements View.OnClickListener,
-		TimePickerDialog.OnTimeSetListener {
+public class ProgressDialogActivity extends Activity implements View.OnClickListener {
 
-	private static final String TAG = TimePickerDialogActivity.class.getSimpleName();
+	private static final String TAG = ProgressDialogActivity.class.getSimpleName();
 
 	public static void startActivity(Activity context) {
-	    final Intent intent = new Intent(context, TimePickerDialogActivity.class);
+	    final Intent intent = new Intent(context, ProgressDialogActivity.class);
 
 	    context.startActivity(intent);
 	}
@@ -52,17 +48,24 @@ public class TimePickerDialogActivity extends Activity implements View.OnClickLi
 	}
 
 	private void showAlertDialog() {
-		final int hour = 20;
-		final int minute = 30;
+		final ProgressDialog progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage("Loading...");
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		progressDialog.setMax(100);
+		progressDialog.show();
 
-		final TimePickerDialog timePickerDialog
-				= new TimePickerDialog(this, this, hour, minute, false);
-		timePickerDialog.show();
-	}
+		final Handler handler = new Handler();
+		final Runnable runnable = new Runnable() {
 
-	@Override
-	public void onTimeSet(final TimePicker view, final int hourOfDay, final int minute) {
-		final String date = String.format("%d:%d", hourOfDay, minute);
-		Toast.makeText(this, date, Toast.LENGTH_SHORT).show();
+			public int mProgress;
+
+			@Override
+			public void run() {
+				progressDialog.setProgress(mProgress++);
+
+				handler.postDelayed(this, 100);
+			}
+		};
+		handler.postDelayed(runnable, 100);
 	}
 }
