@@ -8,9 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/Lesson_10" />
-            <option value="$PROJECT_DIR$/Lesson_12" />
             <option value="$PROJECT_DIR$/Lesson_13" />
+            <option value="$PROJECT_DIR$/Lesson_14" />
             <option value="$PROJECT_DIR$/Lesson_6" />
             <option value="$PROJECT_DIR$/Lesson_8" />
             <option value="$PROJECT_DIR$/Lesson_9" />

@@ -27,6 +27,7 @@
         <activity android:name=".DatePickerDialogActivity"/>
         <activity android:name=".TimePickerDialogActivity"/>
         <activity android:name=".ProgressDialogActivity"/>
+        <activity android:name=".CharacterPickerDialogActivity"/>
     </application>
 
 </manifest>

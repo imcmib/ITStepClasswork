@@ -3,6 +3,7 @@ package org.itstep.android.classwork;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.CharacterPickerDialog;
 import android.util.Log;
 import android.view.View;
 
@@ -24,6 +25,7 @@ public class DialogsActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.datePickerDialog).setOnClickListener(this);
 		findViewById(R.id.timePickerDialog).setOnClickListener(this);
 		findViewById(R.id.progressDialog).setOnClickListener(this);
+		findViewById(R.id.characterPickerDialog).setOnClickListener(this);
 	}
 
 	@Override
@@ -37,6 +39,9 @@ public class DialogsActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.progressDialog:
 				ProgressDialogActivity.startActivity(this);
+				break;
+			case R.id.characterPickerDialog:
+				CharacterPickerDialogActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
