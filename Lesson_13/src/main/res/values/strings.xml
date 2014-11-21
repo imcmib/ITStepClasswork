@@ -4,5 +4,10 @@
     <string name="app_name">LEsson_13</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="message_note_actions">What to do?</string>
+    <string name="label_button_edit">Edit</string>
+    <string name="label_button_delete">Delete</string>
+    <string name="title_warning">Warning</string>
+    <string name="message_note_not_found">Note not found!</string>
 
 </resources>

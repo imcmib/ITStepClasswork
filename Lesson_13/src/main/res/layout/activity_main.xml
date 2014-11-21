@@ -56,4 +56,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Dialogs"/>
+
+    <Button
+        android:id="@+id/todoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ToDo"/>
 </LinearLayout>

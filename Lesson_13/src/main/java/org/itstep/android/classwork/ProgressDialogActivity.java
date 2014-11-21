@@ -1,12 +1,11 @@
 package org.itstep.android.classwork;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 /*
  * SimpleAlertDialogActivity.java
@@ -20,6 +19,7 @@ import android.view.View;
 public class ProgressDialogActivity extends Activity implements View.OnClickListener {
 
 	private static final String TAG = ProgressDialogActivity.class.getSimpleName();
+	private Button mButton;
 
 	public static void startActivity(Activity context) {
 	    final Intent intent = new Intent(context, ProgressDialogActivity.class);
@@ -32,7 +32,8 @@ public class ProgressDialogActivity extends Activity implements View.OnClickList
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_button);
 
-		findViewById(R.id.button).setOnClickListener(this);
+		mButton = (Button) findViewById(R.id.button);
+		mButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -48,24 +49,46 @@ public class ProgressDialogActivity extends Activity implements View.OnClickList
 	}
 
 	private void showAlertDialog() {
-		final ProgressDialog progressDialog = new ProgressDialog(this);
-		progressDialog.setMessage("Loading...");
-		progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		progressDialog.setMax(100);
-		progressDialog.show();
+//		final ProgressDialog progressDialog = new ProgressDialog(this);
+//		progressDialog.setMessage("Loading...");
+//		progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+//		progressDialog.setMax(100);
+//		progressDialog.show();
+//
+//		final Handler handler = new Handler(Looper.getMainLooper());
+//		final Runnable runnable = new Runnable() {
+//
+//			public int mProgress;
+//
+//			@Override
+//			public void run() {
+//				progressDialog.setProgress(mProgress++);
+//
+//				if (mProgress < 100) {
+//					handler.postDelayed(this, 100);
+//				}
+//			}
+//		};
+//		handler.postDelayed(runnable, 100);
 
-		final Handler handler = new Handler();
-		final Runnable runnable = new Runnable() {
-
-			public int mProgress;
-
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				progressDialog.setProgress(mProgress++);
+//				final Handler handler = new Handler(Looper.getMainLooper());
+//				handler.post(new Runnable() {
+//					@Override
+//					public void run() {
+//						mButton.setText("TEST");
+//					}
+//				});
 
-				handler.postDelayed(this, 100);
+//				mButton.post(new Runnable() {
+//					@Override
+//					public void run() {
+//						mButton.setText("TEST");
+//					}
+//				});
 			}
-		};
-		handler.postDelayed(runnable, 100);
+		}).start();
 	}
 }

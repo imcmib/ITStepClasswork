@@ -56,7 +56,9 @@ public class CharacterPickerDialogActivity extends Activity implements View.OnCl
 		final View view = new View(this);
 		final Editable editable = mEditText.getText();
 		final String options = "0123456789ABCDEF";
-		final CharacterPickerDialog dialog = new CharacterPickerDialog(this, view, editable, options, true);
+
+		final CharacterPickerDialog dialog = new CharacterPickerDialog(
+				this, view, editable, options, true);
 		dialog.show();
 	}
 }
