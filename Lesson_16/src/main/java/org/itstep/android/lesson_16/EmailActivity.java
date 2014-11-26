@@ -12,6 +12,9 @@ import android.widget.EditText;
 
 import org.apache.http.protocol.HTTP;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /*
  * EmailActivity.java
  *
@@ -74,7 +77,12 @@ public class EmailActivity extends Activity implements View.OnClickListener {
 
 	private void sendEmail() {
 		final String email = mEmailEditText.getText().toString();
-		if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+
+		final Pattern emailAddress = Patterns.EMAIL_ADDRESS;
+
+		final Matcher matcher = emailAddress.matcher(email);
+
+		if (!matcher.matches()) {
 			mEmailEditText.setError("Invalid email address");
 			mEmailEditText.setSelection(email.length());
 			mEmailEditText.requestFocus();

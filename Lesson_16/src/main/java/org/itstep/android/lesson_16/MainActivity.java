@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import org.apache.http.protocol.HTTP;
 
@@ -23,6 +26,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 		mUseChooserCheckBox = (CheckBox) findViewById(R.id.useChooserCheckBox);
 
@@ -100,7 +105,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		final Intent intent = new Intent(Intent.ACTION_SEND);
 		intent.setData(Uri.parse("mailto:"));
 		intent.setType(HTTP.PLAIN_TEXT_TYPE); // "text/plain" MIME type
-		intent.putExtra(Intent.EXTRA_EMAIL, new String[] { email });
+		final String[] value = {email, "email@some.com"};
+		intent.putExtra(Intent.EXTRA_EMAIL, value);
 		intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 		intent.putExtra(Intent.EXTRA_TEXT, message);
 
