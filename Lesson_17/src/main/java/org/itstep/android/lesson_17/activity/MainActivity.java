@@ -17,6 +17,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		setContentView(R.layout.activity_main);
 
 		findViewById(R.id.pendingIntentButton).setOnClickListener(this);
+		findViewById(R.id.alarmButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -24,6 +25,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		switch (view.getId()) {
 			case R.id.pendingIntentButton:
 				PendingIntentActivity.startActivity(this);
+				break;
+			case R.id.alarmButton:
+				AlarmActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

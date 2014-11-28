@@ -19,6 +19,7 @@
 
         <activity android:name=".activity.PendingIntentActivity"/>
         <activity android:name=".activity.TestActivity"/>
+        <activity android:name=".activity.AlarmActivity"/>
 
         <receiver
             android:name=".receiver.PendingIntentReceiver"

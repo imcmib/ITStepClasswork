@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import org.itstep.android.lesson_17.R;
@@ -52,7 +53,8 @@ public class PendingIntentActivity extends Activity implements View.OnClickListe
 		findViewById(R.id.cancel1NotificationButton).setOnClickListener(this);
 		findViewById(R.id.createActivityNotificationButton).setOnClickListener(this);
 
-		mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		mNotificationManager = (NotificationManager)
+				getSystemService(Context.NOTIFICATION_SERVICE);
 	}
 
 	@Override
@@ -80,33 +82,50 @@ public class PendingIntentActivity extends Activity implements View.OnClickListe
 	}
 
 	private void onCompareIntentClick() {
-		final Intent intent1 = createIntent(PendingIntentReceiver.ACTION_MY_1, "extra 1");
-		final PendingIntent pendingIntent1 = PendingIntent.getBroadcast(this, 0, intent1, 0);
+		final Intent intent1 = createIntent(
+				PendingIntentReceiver.ACTION_MY_1, "extra 1");
+		final PendingIntent pendingIntent1
+				= PendingIntent.getBroadcast(this, 0, intent1, 0);
 
-		final Intent intent2 = createIntent(PendingIntentReceiver.ACTION_MY_2, "extra 2");
-		final PendingIntent pendingIntent2 = PendingIntent.getBroadcast(this, 0, intent2, 0);
+		final Intent intent2 = createIntent(
+				PendingIntentReceiver.ACTION_MY_1, "extra 2");
+		final PendingIntent pendingIntent2
+				= PendingIntent.getBroadcast(this, 0, intent2, 0);
 
 		compareIntents(intent1, intent2);
 		comparePendingIntents(pendingIntent1, pendingIntent2);
 	}
 
 	private void onCreate1NotificationClick() {
-		final Intent intent = createIntent(PendingIntentReceiver.ACTION_MY_1, "extra 1");
-		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+		final Intent intent = createIntent(
+				PendingIntentReceiver.ACTION_MY_1, "extra 1");
+		final PendingIntent pendingIntent = PendingIntent.getBroadcast(
+				this, 0, intent, 0);
+
+		final Intent intent2 = createIntent(
+				PendingIntentReceiver.ACTION_MY_1, "extra 2");
+		final PendingIntent pendingIntent2 = PendingIntent.getBroadcast(
+				this, 0, intent2, 0);
+
+//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(
+//				this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(
+// 				this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(
+// 				this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
 		sendNotification(NOTIFICATION_ID_1, pendingIntent);
-//		sendNotification(NOTIFICATION_ID_2, pendingIntent);
+		sendNotification(NOTIFICATION_ID_2, pendingIntent2);
 	}
 
 	private void onCreate2NotificationClick() {
 		final Intent intent = createIntent(PendingIntentReceiver.ACTION_MY_2, "extra 2");
-		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_NO_CREATE);
+//		final PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+		final PendingIntent pendingIntent = PendingIntent.getBroadcast(
+				this, 0, intent, PendingIntent.FLAG_NO_CREATE);
 
-		Log.v(TAG, pendingIntent == null ? "pendingIntent is null" : "pendingIntent created");
+		Log.v(TAG, pendingIntent == null ? "pendingIntent is null"
+				: "pendingIntent created");
 
 		sendNotification(NOTIFICATION_ID_2, pendingIntent);
 	}
@@ -117,7 +136,8 @@ public class PendingIntentActivity extends Activity implements View.OnClickListe
 
 	private void onCreateActivityNotificationClick() {
 		final Intent intent = new Intent(this, TestActivity.class);
-		final PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+		final PendingIntent pendingIntent = PendingIntent.getActivity(
+				this, 0, intent, 0);
 
 		sendNotification(0, pendingIntent);
 	}
