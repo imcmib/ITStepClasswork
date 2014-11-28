@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/compareIntentsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compare Intents"/>
+
+    <Button
+        android:id="@+id/create1NotificationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create #1 notification"/>
+
+    <Button
+        android:id="@+id/create2NotificationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create #2 notification"/>
+
+    <Button
+        android:id="@+id/cancel1NotificationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel #1 notification"/>
+
+    <Button
+        android:id="@+id/createActivityNotificationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create activity notification"/>
+</LinearLayout>
