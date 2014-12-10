@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.1"
 
     defaultConfig {
-        applicationId "org.itstep.android.lesson_18"
+        applicationId "org.itstep.android.mylibrary"
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
@@ -25,5 +25,6 @@ android {
 }
 
 dependencies {
-        compile 'com.android.support:support-v4:21.0.2'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.2'
 }
