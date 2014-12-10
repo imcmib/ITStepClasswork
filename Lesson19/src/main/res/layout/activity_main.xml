@@ -27,4 +27,10 @@
         android:layout_height="wrap_content"
         android:text="Local Receiver"/>
 
+    <Button
+        android:id="@+id/batteryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Batteryw"/>
+
 </LinearLayout>

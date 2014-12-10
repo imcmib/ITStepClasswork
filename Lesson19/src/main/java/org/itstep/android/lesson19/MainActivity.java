@@ -20,6 +20,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		findViewById(R.id.simpleReceiverButton).setOnClickListener(this);
 		findViewById(R.id.sendBroadcastButton).setOnClickListener(this);
 		findViewById(R.id.localReceiverButton).setOnClickListener(this);
+		findViewById(R.id.batteryButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -35,6 +36,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 				break;
 			case R.id.localReceiverButton:
 				LocalReceiverActivity.startActivity(this);
+				break;
+			case R.id.batteryButton:
+				BatteryActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
