@@ -44,7 +44,7 @@ public class StickyService extends Service {
 
 		doSomeWorkInNewThread();
 
-		return Service.START_STICKY;
+		return Service.START_REDELIVER_INTENT;
 	}
 
 	@Override

@@ -24,7 +24,7 @@ public class ExtendedService extends Service {
 
 	public static final String EXTRA_KEY_TIME = "EXTRA_KEY_TIME";
 
-	private static final int THREADS_COUNT = 1;
+	private static final int THREADS_COUNT = 3;
 
 	private ExecutorService mExecutorService;
 

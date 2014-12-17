@@ -52,11 +52,11 @@ public class SimpleService extends Service {
 	private void doSomeWorkInMainThread() {
 		try {
 			int counter = 0;
-			while (counter < 5) {
+			while (counter < 15) {
 				Log.v(TAG, "Count: " + counter++);
 				TimeUnit.SECONDS.sleep(1);
 			}
-			stopSelf();
+//			stopSelf();
 		} catch (Exception e) {
 			Log.e(TAG, "Error", e);
 		}
@@ -66,16 +66,7 @@ public class SimpleService extends Service {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
-				try {
-					int counter = 0;
-					while (counter < 5) {
-						Log.v(TAG, "Count: " + counter++);
-						TimeUnit.SECONDS.sleep(1);
-					}
-					stopSelf();
-				} catch (Exception e) {
-					Log.e(TAG, "Error", e);
-				}
+				doSomeWorkInMainThread();
 			}
 		}).start();
 	}

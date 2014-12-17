@@ -37,15 +37,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 				stopService(new Intent(this, SimpleService.class));
 				break;
 			case R.id.startExServiceButton:
-				startService(new Intent(this, ExtendedService.class).putExtra(ExtendedService.EXTRA_KEY_TIME, 10));
-				startService(new Intent(this, ExtendedService.class).putExtra(ExtendedService.EXTRA_KEY_TIME, 2));
-				startService(new Intent(this, ExtendedService.class).putExtra(ExtendedService.EXTRA_KEY_TIME, 5));
+				startService(new Intent(this, ExtendedService.class)
+						.putExtra(ExtendedService.EXTRA_KEY_TIME, 10));
+				startService(new Intent(this, ExtendedService.class)
+						.putExtra(ExtendedService.EXTRA_KEY_TIME, 2));
+				startService(new Intent(this, ExtendedService.class)
+						.putExtra(ExtendedService.EXTRA_KEY_TIME, 5));
 				break;
 			case R.id.stopExServiceButton:
 				stopService(new Intent(this, ExtendedService.class));
 				break;
 			case R.id.startStickyServiceButton:
-				startService(new Intent(this, StickyService.class).putExtra(StickyService.EXTRA_KEY_DATA, "Test"));
+				startService(new Intent(this, StickyService.class)
+						.putExtra(StickyService.EXTRA_KEY_DATA, "Test"));
 				break;
 			case R.id.stopStickyServiceButton:
 				stopService(new Intent(this, StickyService.class));
