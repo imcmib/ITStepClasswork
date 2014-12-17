@@ -1,4 +1,4 @@
-package com.provectus.myapplication;
+package com.itstep.myapplication;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
