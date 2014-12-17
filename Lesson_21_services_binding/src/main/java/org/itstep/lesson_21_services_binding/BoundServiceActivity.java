@@ -29,7 +29,7 @@ public class BoundServiceActivity extends ActionBarActivity implements View.OnCl
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(org.itstep.lesson_21_services_binding.R.layout.activity_main);
+		setContentView(R.layout.activity_bound_service);
 
 		mServiceConnection = new ServiceConnection() {
 			@Override
@@ -47,10 +47,10 @@ public class BoundServiceActivity extends ActionBarActivity implements View.OnCl
 			}
 		};
 
-		findViewById(org.itstep.lesson_21_services_binding.R.id.startServiceButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.stopServiceButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.bindServiceButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.unbindServiceButton).setOnClickListener(this);
+		findViewById(R.id.startServiceButton).setOnClickListener(this);
+		findViewById(R.id.stopServiceButton).setOnClickListener(this);
+		findViewById(R.id.bindServiceButton).setOnClickListener(this);
+		findViewById(R.id.unbindServiceButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -58,16 +58,16 @@ public class BoundServiceActivity extends ActionBarActivity implements View.OnCl
 		final Intent intent = new Intent(this, BoundService.class);
 
 		switch (view.getId()) {
-			case org.itstep.lesson_21_services_binding.R.id.startServiceButton:
+			case R.id.startServiceButton:
 				startService(intent);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.stopServiceButton:
+			case R.id.stopServiceButton:
 				stopService(intent);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.bindServiceButton:
+			case R.id.bindServiceButton:
 				bindService(intent, mServiceConnection, Service.BIND_AUTO_CREATE);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.unbindServiceButton:
+			case R.id.unbindServiceButton:
 				if (mBounded) {
 					unbindService(mServiceConnection);
 

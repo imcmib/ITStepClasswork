@@ -12,31 +12,31 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(org.itstep.lesson_21_services_binding.R.layout.activity_main);
+		setContentView(R.layout.activity_main);
 
-		findViewById(org.itstep.lesson_21_services_binding.R.id.pendingIntentResultButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.broadcastResultButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.boundServiceButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.intentServiceButton).setOnClickListener(this);
-		findViewById(org.itstep.lesson_21_services_binding.R.id.foregroundServiceButton).setOnClickListener(this);
+		findViewById(R.id.pendingIntentResultButton).setOnClickListener(this);
+		findViewById(R.id.broadcastResultButton).setOnClickListener(this);
+		findViewById(R.id.boundServiceButton).setOnClickListener(this);
+		findViewById(R.id.intentServiceButton).setOnClickListener(this);
+		findViewById(R.id.foregroundServiceButton).setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(final View view) {
 		switch (view.getId()) {
-			case org.itstep.lesson_21_services_binding.R.id.pendingIntentResultButton:
+			case R.id.pendingIntentResultButton:
 				PendingIntentResultActivity.startActivity(this);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.broadcastResultButton:
+			case R.id.broadcastResultButton:
 				BroadcastResultActivity.startActivity(this);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.boundServiceButton:
+			case R.id.boundServiceButton:
 				BoundServiceActivity.startActivity(this);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.intentServiceButton:
+			case R.id.intentServiceButton:
 				IntentServiceActivity.startActivity(this);
 				break;
-			case org.itstep.lesson_21_services_binding.R.id.foregroundServiceButton:
+			case R.id.foregroundServiceButton:
 				ForegroundServiceActivity.startActivity(this);
 				break;
 			default:

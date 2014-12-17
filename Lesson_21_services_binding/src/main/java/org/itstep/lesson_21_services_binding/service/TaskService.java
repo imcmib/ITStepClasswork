@@ -38,7 +38,7 @@ public class TaskService extends Service {
 
 		Log.v(TAG, "onCreate");
 
-		mExecutorService = Executors.newFixedThreadPool(1);
+		mExecutorService = Executors.newFixedThreadPool(3);
 	}
 
 	@Override
@@ -80,6 +80,7 @@ public class TaskService extends Service {
 			Log.v(TAG, "MyTask#" + startId + " create");
 		}
 
+		@Override
 		public void run() {
 			Log.v(TAG, "MyTask#" + mStartId + " start, time = " + mTime);
 			try {

@@ -32,6 +32,7 @@ public class BroadcastResultActivity extends Activity {
 	private TextView mTask1TextView;
 	private TextView mTask2TextView;
 	private TextView mTask3TextView;
+
 	private BroadcastReceiver mBroadcastReceiver;
 
 	public static void startActivity(Activity context) {
@@ -112,12 +113,12 @@ public class BroadcastResultActivity extends Activity {
 	}
 
 	private void onStartButtonClick() {
-		startService(TASK_ID_1, 10);
-		startService(TASK_ID_2, 5);
-		startService(TASK_ID_3, 7);
+		launchService(TASK_ID_1, 10);
+		launchService(TASK_ID_2, 5);
+		launchService(TASK_ID_3, 7);
 	}
 
-	private void startService(int taskId, int time) {
+	private void launchService(int taskId, int time) {
 		final Intent intent = new Intent(this, BroadcastService.class)
 				.putExtra(BroadcastService.EXTRA_KEY_TASK_ID, taskId)
 				.putExtra(BroadcastService.EXTRA_KEY_TIME, time);

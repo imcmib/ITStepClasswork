@@ -27,9 +27,9 @@ public class IntentServiceActivity extends Activity {
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(org.itstep.lesson_21_services_binding.R.layout.activity_intent_service);
+		setContentView(R.layout.activity_intent_service);
 
-		findViewById(org.itstep.lesson_21_services_binding.R.id.startButton).setOnClickListener(new View.OnClickListener() {
+		findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View v) {
 				onStartButtonClick();
@@ -38,12 +38,12 @@ public class IntentServiceActivity extends Activity {
 	}
 
 	private void onStartButtonClick() {
-		startService("Task 1", 10);
-		startService("Task 2", 5);
-		startService("Task 3", 7);
+		launchService("Task 1", 10);
+		launchService("Task 2", 5);
+		launchService("Task 3", 7);
 	}
 
-	private void startService(String label, int time) {
+	private void launchService(String label, int time) {
 		final Intent intent = new Intent(this, MyIntentService.class)
 				.putExtra(MyIntentService.EXTRA_KEY_LABEL, label)
 				.putExtra(MyIntentService.EXTRA_KEY_TIME, time);

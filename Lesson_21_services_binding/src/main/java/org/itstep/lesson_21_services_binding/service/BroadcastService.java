@@ -84,6 +84,7 @@ public class BroadcastService extends Service {
 			Log.v(TAG, "MyTask#" + startId + " create");
 		}
 
+		@Override
 		public void run() {
 			Log.v(TAG, "MyTask#" + mStartId + " start, time = " + mTime);
 

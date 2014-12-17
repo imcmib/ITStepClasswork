@@ -29,7 +29,9 @@
         <service android:name=".service.TaskService"/>
         <service android:name=".service.BroadcastService"/>
         <service android:name=".service.MyIntentService"/>
-        <service android:name=".service.ForegroundService"/>
+        <service
+            android:name=".service.ForegroundService"
+            android:process=":foreground"/>
     </application>
 
 </manifest>

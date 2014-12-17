@@ -41,14 +41,13 @@ public class PendingIntentResultActivity extends Activity {
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(org.itstep.lesson_21_services_binding.R.layout.activity_pending_intent_result);
+		setContentView(R.layout.activity_pending_intent_result);
 
-		mTask1TextView = (TextView) findViewById(org.itstep.lesson_21_services_binding.R.id.task1TextView);
-		mTask2TextView = (TextView) findViewById(org.itstep.lesson_21_services_binding.R.id.task2TextView);
-		mTask3TextView = (TextView) findViewById(org.itstep.lesson_21_services_binding.R.id.task3TextView);
+		mTask1TextView = (TextView) findViewById(R.id.task1TextView);
+		mTask2TextView = (TextView) findViewById(R.id.task2TextView);
+		mTask3TextView = (TextView) findViewById(R.id.task3TextView);
 
-		findViewById(org.itstep.lesson_21_services_binding.R.id.startButton).setOnClickListener(new View.OnClickListener() {
-			@Override
+		findViewById(R.id.startButton).setOnClickListener(new View.OnClickListener() {
 			public void onClick(final View v) {
 				onStartButtonClick();
 			}
@@ -56,12 +55,12 @@ public class PendingIntentResultActivity extends Activity {
 	}
 
 	private void onStartButtonClick() {
-		startService(REQUEST_CODE_TASK_1, 10);
-		startService(REQUEST_CODE_TASK_2, 5);
-		startService(REQUEST_CODE_TASK_3, 7);
+		launchService(REQUEST_CODE_TASK_1, 10);
+		launchService(REQUEST_CODE_TASK_2, 5);
+		launchService(REQUEST_CODE_TASK_3, 7);
 	}
 
-	private void startService(int requestCode, int time) {
+	private void launchService(int requestCode, int time) {
 		final PendingIntent pendingResult = createPendingResult(requestCode, new Intent(), 0);
 
 		final Intent intent = new Intent(this, TaskService.class)
