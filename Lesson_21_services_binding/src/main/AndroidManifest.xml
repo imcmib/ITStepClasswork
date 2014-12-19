@@ -22,6 +22,7 @@
         <activity android:name=".BroadcastResultActivity"/>
         <activity android:name=".IntentServiceActivity"/>
         <activity android:name=".ForegroundServiceActivity"/>
+        <activity android:name=".BoundService2Activity"/>
 
         <service
             android:name=".service.BoundService"
@@ -32,6 +33,9 @@
         <service
             android:name=".service.ForegroundService"
             android:process=":foreground"/>
+        <service
+            android:name=".service.ConnectionService"
+            android:exported="false"/>
     </application>
 
 </manifest>

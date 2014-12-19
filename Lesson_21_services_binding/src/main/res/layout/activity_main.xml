@@ -22,12 +22,6 @@
         android:text="Broadcast result"/>
 
     <Button
-        android:id="@+id/boundServiceButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Bound service"/>
-
-    <Button
         android:id="@+id/intentServiceButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,4 +32,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Foreground service"/>
+
+    <Button
+        android:id="@+id/boundServiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bound service"/>
+
+    <Button
+        android:id="@+id/boundService2Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bound 2 service"/>
 </LinearLayout>

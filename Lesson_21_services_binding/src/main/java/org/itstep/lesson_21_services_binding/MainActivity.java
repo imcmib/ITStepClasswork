@@ -16,9 +16,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 		findViewById(R.id.pendingIntentResultButton).setOnClickListener(this);
 		findViewById(R.id.broadcastResultButton).setOnClickListener(this);
-		findViewById(R.id.boundServiceButton).setOnClickListener(this);
 		findViewById(R.id.intentServiceButton).setOnClickListener(this);
 		findViewById(R.id.foregroundServiceButton).setOnClickListener(this);
+		findViewById(R.id.boundServiceButton).setOnClickListener(this);
+		findViewById(R.id.boundService2Button).setOnClickListener(this);
 	}
 
 	@Override
@@ -38,6 +39,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 				break;
 			case R.id.foregroundServiceButton:
 				ForegroundServiceActivity.startActivity(this);
+				break;
+			case R.id.boundService2Button:
+				BoundService2Activity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());
