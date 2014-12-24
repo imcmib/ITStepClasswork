@@ -13,4 +13,5 @@
 //include ':Lesson_18'
 //include ':Lesson19'
 //include ':lesson_20_services'
-include ':Lesson_21_services_binding'
+//include ':Lesson_21_services_binding'
+include ':Lesson_23_fragments'

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="horizontal">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="org.itstep.android.lesson_23_fragments.fragment.FirstFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_first"/>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="org.itstep.android.lesson_23_fragments.fragment.SecondFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_second"/>
+</LinearLayout>
