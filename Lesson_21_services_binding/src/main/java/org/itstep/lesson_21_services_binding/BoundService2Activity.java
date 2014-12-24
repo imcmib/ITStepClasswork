@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -13,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 
 import org.itstep.lesson_21_services_binding.service.ConnectionService;
-import org.itstep.lesson_21_services_binding.service.BoundService;
 
 public class BoundService2Activity extends ActionBarActivity implements View.OnClickListener {
 
@@ -70,6 +70,21 @@ public class BoundService2Activity extends ActionBarActivity implements View.OnC
 
 		mDownIntervalButton = (Button) findViewById(R.id.downIntervalButton);
 		mDownIntervalButton.setOnClickListener(this);
+
+		final Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				if (mBounded && mService != null) {
+					final long interval = mService.getInterval();
+					setTitle(String.valueOf(interval));
+				}
+
+				handler.postDelayed(this, 1000);
+			}
+		}, 1000);
+
+		updateUI();
 	}
 
 	@Override
@@ -91,6 +106,8 @@ public class BoundService2Activity extends ActionBarActivity implements View.OnC
 					unbindService(mServiceConnection);
 
 					mBounded = false;
+
+					updateUI();
 				}
 				break;
 			case R.id.upIntervalButton:

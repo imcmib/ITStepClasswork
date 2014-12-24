@@ -27,6 +27,13 @@ public class BoundService extends Service {
 	}
 
 	@Override
+	public int onStartCommand(final Intent intent, final int flags, final int startId) {
+		Log.v(TAG, "onStartCommand");
+
+		return super.onStartCommand(intent, flags, startId);
+	}
+
+	@Override
 	public IBinder onBind(final Intent intent) {
 		Log.v(TAG, "onBind");
 

@@ -10,11 +10,25 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/addButton"
+            android:id="@+id/addButton1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add"/>
+            android:text="Add 1"/>
+
+        <Button
+            android:id="@+id/addButton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add 2"/>
+
+        <Button
+            android:id="@+id/addButton3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add 3"/>
 
         <Button
             android:id="@+id/removeButton"
@@ -40,5 +54,8 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+
+    </FrameLayout>
 </LinearLayout>

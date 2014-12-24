@@ -34,6 +34,11 @@ public class SimpleFragmentActivity extends Activity {
 		Log.d(TAG, "onCreate");
 	}
 
+	@Override
+	protected void onRestoreInstanceState(final Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+	}
+
 	protected void onStart() {
 		super.onStart();
 		Log.d(TAG, "onStart");

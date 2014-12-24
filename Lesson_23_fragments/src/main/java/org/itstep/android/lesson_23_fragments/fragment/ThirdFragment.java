@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import org.itstep.android.lesson_23_fragments.R;
 
@@ -20,9 +19,9 @@ import org.itstep.android.lesson_23_fragments.R;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class FirstFragment extends Fragment {
+public class ThirdFragment extends Fragment {
 
-	private static final String TAG = FirstFragment.class.getSimpleName();
+	private static final String TAG = ThirdFragment.class.getSimpleName();
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -33,33 +32,16 @@ public class FirstFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "onCreate");
-
-		final Bundle arguments = getArguments();
 	}
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		Log.d(TAG, "onCreateView");
-		final View view = inflater.inflate(R.layout.fragment_first, null);
-
-		view.findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View v) {
-				Toast.makeText(getActivity(), "Click 1", Toast.LENGTH_SHORT).show();
-			}
-		});
-
-		return view;
+		return inflater.inflate(R.layout.fragment_third, null);
 	}
 
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 		Log.d(TAG, "onActivityCreated");
-	}
-
-	@Override
-	public void onSaveInstanceState(final Bundle outState) {
-		super.onSaveInstanceState(outState);
-
 	}
 
 	public void onStart() {
