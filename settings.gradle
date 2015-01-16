@@ -1,3 +1,4 @@
+include ':Lesson_25_navigationdrawer'
 //include 'Lesson_6'
 //include 'Lesson_7'
 //include 'Lesson_8'
@@ -14,4 +15,4 @@
 //include ':Lesson19'
 //include ':lesson_20_services'
 //include ':Lesson_21_services_binding'
-include ':Lesson_23_fragments'
+//include ':Lesson_23_fragments'
