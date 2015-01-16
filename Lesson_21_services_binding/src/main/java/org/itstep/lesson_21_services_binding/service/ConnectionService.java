@@ -39,6 +39,13 @@ public class ConnectionService extends Service {
 	}
 
 	@Override
+	public int onStartCommand(final Intent intent, final int flags, final int startId) {
+		Log.v(TAG, "onStartCommand");
+
+		return super.onStartCommand(intent, flags, startId);
+	}
+
+	@Override
 	public IBinder onBind(final Intent intent) {
 		Log.v(TAG, "onBind");
 
@@ -64,6 +71,10 @@ public class ConnectionService extends Service {
 		super.onDestroy();
 
 		Log.v(TAG, "onDestroy");
+
+		if (mTimerTask != null) {
+			mTimerTask.cancel();
+		}
 	}
 
 	private void schedule() {
@@ -100,7 +111,12 @@ public class ConnectionService extends Service {
 		return mInterval;
 	}
 
+	public long getInterval() {
+		return mInterval;
+	}
+
 	public class LocalBinder extends Binder {
+
 		public ConnectionService getService() {
 			return ConnectionService.this;
 		}
