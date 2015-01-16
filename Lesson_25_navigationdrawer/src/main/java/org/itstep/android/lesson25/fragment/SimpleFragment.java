@@ -39,7 +39,8 @@ public class SimpleFragment extends Fragment {
 		final View view = inflater.inflate(R.layout.fragment_main, container, false);
 
 		final TextView textView = (TextView) view.findViewById(R.id.textView);
-		textView.setText(getArguments().getString(EXTRA_KEY_TEXT));
+		final String text = getArguments().getString(EXTRA_KEY_TEXT);
+		textView.setText(text);
 
 		return view;
 	}

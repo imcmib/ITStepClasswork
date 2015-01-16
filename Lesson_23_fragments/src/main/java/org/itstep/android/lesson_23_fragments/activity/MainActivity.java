@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 
+import org.itstep.android.lesson_23_fragments.DrawerActivity;
 import org.itstep.android.lesson_23_fragments.R;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
@@ -18,6 +19,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 		findViewById(R.id.simpleFragmentsButton).setOnClickListener(this);
 		findViewById(R.id.dynamicFragmentsButton).setOnClickListener(this);
+		findViewById(R.id.flowButton).setOnClickListener(this);
+		findViewById(R.id.drawerButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -28,6 +31,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 				break;
 			case R.id.dynamicFragmentsButton:
 				DynamicFragmentActivity.startActivity(this);
+				break;
+			case R.id.flowButton:
+//				MailListActivity.startActivity(this);
+				break;
+			case R.id.drawerButton:
+				DrawerActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

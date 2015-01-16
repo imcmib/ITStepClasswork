@@ -1,4 +1,4 @@
-include ':Lesson_25_navigationdrawer'
+include ':Lesson_25_navigationdrawer', ':Lesson_25_example'
 //include 'Lesson_6'
 //include 'Lesson_7'
 //include 'Lesson_8'
