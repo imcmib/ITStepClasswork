@@ -9,7 +9,8 @@ import android.view.Menu;
 
 import org.itstep.android.lesson25.fragment.SimpleFragment;
 
-public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends ActionBarActivity implements
+		NavigationDrawerFragment.NavigationDrawerCallbacks {
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -20,9 +21,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
+		mNavigationDrawerFragment = (NavigationDrawerFragment)
+				getFragmentManager().findFragmentById(R.id.navigation_drawer);
 
-		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+		final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, drawerLayout);
 	}
 
 	@Override

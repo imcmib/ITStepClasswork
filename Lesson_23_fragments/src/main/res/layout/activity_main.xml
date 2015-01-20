@@ -21,4 +21,17 @@
         android:layout_height="wrap_content"
         android:text="Dynamic fragments"/>
 
+    <Button
+        android:id="@+id/flowButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Master Details Flow "/>
+
+    <Button
+        android:id="@+id/drawerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drawer"/>
+
+
 </LinearLayout>
