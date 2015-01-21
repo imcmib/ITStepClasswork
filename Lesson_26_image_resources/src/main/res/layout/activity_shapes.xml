@@ -46,12 +46,13 @@
             android:textColor="@android:color/white"
             android:background="@drawable/shape_rectangle_round_bl_tr_corners" />
 
-        <Button
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:text="Button"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:background="@drawable/shape_oval" />
 
         <Button
@@ -63,8 +64,8 @@
             android:background="@drawable/shape_oval_stroke" />
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
             android:layout_marginTop="10dp"
             android:text="Button"
             android:textColor="@android:color/white"

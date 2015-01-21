@@ -9,7 +9,7 @@
         android:id="@+id/ninePatchButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="9-patch" />
+        android:text="9-patch"/>
 
     <Button
         android:id="@+id/shapesButton"
@@ -21,6 +21,15 @@
         android:id="@+id/selectorsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Selectors" />
+        android:text="Selectors"
+        android:background="@drawable/selector_button_blue"/>
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Selectors"
+        android:background="@drawable/selector_button_blue"/>
 
 </LinearLayout>
