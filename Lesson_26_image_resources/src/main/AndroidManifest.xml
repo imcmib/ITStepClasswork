@@ -19,6 +19,7 @@
         <activity android:name=".NinePatchActivity" />
         <activity android:name=".ShapesActivity" />
         <activity android:name=".SelectorsActivity" />
+        <activity android:name=".ListActivity" />
     </application>
 
 </manifest>

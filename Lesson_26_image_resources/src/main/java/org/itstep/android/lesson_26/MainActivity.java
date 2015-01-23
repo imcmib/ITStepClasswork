@@ -26,6 +26,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		findViewById(R.id.ninePatchButton).setOnClickListener(this);
 		findViewById(R.id.shapesButton).setOnClickListener(this);
 		findViewById(R.id.selectorsButton).setOnClickListener(this);
+		findViewById(R.id.testButton).setOnClickListener(this);
 	}
 
 	@Override
@@ -39,6 +40,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 				break;
 			case R.id.selectorsButton:
 				SelectorsActivity.startActivity(this);
+				break;
+			case R.id.testButton:
+				ListActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view: " + getResources().getResourceName(view.getId()));
