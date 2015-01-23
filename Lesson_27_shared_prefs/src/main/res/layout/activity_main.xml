@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/sharedPrefsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shared Preferences"/>
+
+    <Button
+        android:id="@+id/prefsActivityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preferences Activity"/>
+
+    <Button
+        android:id="@+id/prefsNewActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preferences Activity"/>
+
+</LinearLayout>
