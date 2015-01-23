@@ -16,6 +16,6 @@
 //include ':Lesson_21_services_binding'
 //include ':Lesson_23_fragments'
 //include ':Lesson_25_example'
-//include ':Lesson_25_navigationdrawer'
+include ':Lesson_25_navigationdrawer'
 //include ':Lesson_26_image_resources'
-include ':Lesson_27_shared_prefs'
+//include ':Lesson_27_shared_prefs'

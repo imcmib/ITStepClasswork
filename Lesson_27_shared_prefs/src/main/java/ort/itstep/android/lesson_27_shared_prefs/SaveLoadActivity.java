@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /*
  * SaveLoadActivity.java
@@ -66,8 +71,18 @@ public class SaveLoadActivity extends ActionBarActivity implements View.OnClickL
 		final String text = mEditText.getText().toString();
 
 		final SharedPreferences preferences = getPreferences(MODE_PRIVATE);
+
 		final SharedPreferences.Editor editor = preferences.edit();
 		editor.putString(KEY_TEXT, text);
+		editor.putLong("key_long", 1);
+		editor.putBoolean("key_bool", true);
+		editor.putFloat("key_float", 0.44f);
+		editor.putInt("key_int", 222);
+		final HashSet<String> values = new HashSet<>();
+		values.add("item 1");
+		values.add("item 2");
+		values.add("item 3");
+		editor.putStringSet("key_set", values);
 		editor.commit();
 
 		mEditText.getText().clear();
@@ -76,6 +91,11 @@ public class SaveLoadActivity extends ActionBarActivity implements View.OnClickL
 	private void loadData() {
 		final SharedPreferences preferences = getPreferences(MODE_PRIVATE);
 		final String text = preferences.getString(KEY_TEXT, "");
+
+		final Map<String, ?> all = preferences.getAll();
+		for (Map.Entry<String, ?> entry : all.entrySet()) {
+			Log.v(TAG, String.format("%s = %s", entry.getKey(), entry.getValue()));
+		}
 
 		mEditText.setText(text);
 	}

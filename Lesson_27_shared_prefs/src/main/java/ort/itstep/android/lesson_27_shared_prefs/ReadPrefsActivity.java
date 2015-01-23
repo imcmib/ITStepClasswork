@@ -47,7 +47,9 @@ public class ReadPrefsActivity extends ActionBarActivity {
 	protected void onResume() {
 		super.onResume();
 
-		final SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+		final SharedPreferences preferences =
+				PreferenceManager.getDefaultSharedPreferences(this);
+
 		final boolean checked = preferences.getBoolean("checkBox", false);
 		final String text = preferences.getString("editText", "");
 

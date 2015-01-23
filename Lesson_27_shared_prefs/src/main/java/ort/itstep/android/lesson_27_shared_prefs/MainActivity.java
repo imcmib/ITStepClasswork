@@ -18,6 +18,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		findViewById(R.id.prefsActivityButton).setOnClickListener(this);
 		findViewById(R.id.prefsActivityButton).setOnClickListener(this);
 		findViewById(R.id.prefsNewActivity).setOnClickListener(this);
+
+
 	}
 
 	@Override

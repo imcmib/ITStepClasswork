@@ -6,6 +6,7 @@
         <item>two</item>
         <item>three</item>
     </string-array>
+
     <string-array name="entry_values">
         <item>1</item>
         <item>2</item>

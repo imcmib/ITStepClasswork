@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.squareup.otto.Subscribe;
+
 import org.itstep.android.lesson25.MyApp;
 import org.itstep.android.lesson25.R;
 import org.itstep.android.lesson25.event.ButtonClickedEvent;
@@ -23,16 +25,16 @@ import org.itstep.android.lesson25.event.SecondEvent;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class SimpleFragment extends Fragment {
+public class SecondFragment extends Fragment {
 
 	public static final String EXTRA_KEY_TEXT = "EXTRA_KEY_TEXT";
-	private static final String TAG = SimpleFragment.class.getSimpleName();
+	private static final String TAG = SecondFragment.class.getSimpleName();
 
-	public static SimpleFragment newInstance(String text) {
+	public static SecondFragment newInstance(String text) {
 		final Bundle args = new Bundle();
 		args.putString(EXTRA_KEY_TEXT, text);
 
-		final SimpleFragment fragment = new SimpleFragment();
+		final SecondFragment fragment = new SecondFragment();
 		fragment.setArguments(args);
 
 		return fragment;
@@ -47,20 +49,20 @@ public class SimpleFragment extends Fragment {
 		final String text = getArguments().getString(EXTRA_KEY_TEXT);
 		textView.setText(text);
 
-		view.findViewById(R.id.sendButton).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View v) {
-				MyApp.getInstance().getBus().post(new ButtonClickedEvent("Test"));
-			}
-		});
-
-		view.findViewById(R.id.send2Button).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(final View v) {
-				MyApp.getInstance().getBus().post(new SecondEvent());
-			}
-		});
+		MyApp.getInstance().getBus().register(this);
 
 		return view;
+	}
+
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+
+		MyApp.getInstance().getBus().unregister(this);
+	}
+
+	@Subscribe
+	public void onButtonClicked(ButtonClickedEvent event) {
+		Log.v(TAG, "Clicked");
 	}
 }

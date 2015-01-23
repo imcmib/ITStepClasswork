@@ -15,4 +15,17 @@
         android:gravity="center"
         android:textSize="32sp"/>
 
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send"/>
+
+    <Button
+        android:id="@+id/send2Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sendButton"
+        android:text="Send"/>
+
 </RelativeLayout>

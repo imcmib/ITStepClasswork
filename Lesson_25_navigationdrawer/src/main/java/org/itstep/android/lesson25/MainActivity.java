@@ -6,7 +6,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.Toast;
 
+import com.squareup.otto.Subscribe;
+
+import org.itstep.android.lesson25.event.ButtonClickedEvent;
+import org.itstep.android.lesson25.fragment.SecondFragment;
 import org.itstep.android.lesson25.fragment.SimpleFragment;
 
 public class MainActivity extends ActionBarActivity implements
@@ -60,5 +65,24 @@ public class MainActivity extends ActionBarActivity implements
 			return true;
 		}
 		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		MyApp.getInstance().getBus().register(this);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+
+		MyApp.getInstance().getBus().unregister(this);
+	}
+
+	@Subscribe
+	public void onButtonClicked(ButtonClickedEvent event) {
+		Toast.makeText(this, event.getText(), Toast.LENGTH_LONG).show();
 	}
 }
