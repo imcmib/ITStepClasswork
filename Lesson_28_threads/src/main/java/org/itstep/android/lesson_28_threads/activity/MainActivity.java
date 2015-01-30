@@ -22,6 +22,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		findViewById(R.id.button_threads_1).setOnClickListener(this);
 		findViewById(R.id.button_threads_2).setOnClickListener(this);
 		findViewById(R.id.button_threads_3).setOnClickListener(this);
+		findViewById(R.id.button_threads_4).setOnClickListener(this);
 	}
 
 	@Override
@@ -35,6 +36,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 				break;
 			case R.id.button_threads_3:
 				ThreadSyncActivity.startActivity(this);
+				break;
+			case R.id.button_threads_4:
+				AsyncActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

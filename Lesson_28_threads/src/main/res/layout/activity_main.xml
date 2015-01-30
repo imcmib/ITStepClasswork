@@ -24,4 +24,10 @@
         android:layout_height="wrap_content"
         android:text="Threads 3"/>
 
+    <Button
+        android:id="@+id/button_threads_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Threads 4"/>
+
 </LinearLayout>

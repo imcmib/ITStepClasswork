@@ -27,7 +27,7 @@ public class SimpleThread extends Thread {
 				break;
 			}
 
-			Log.d(TAG, String.format("%s: %d", getName(), mCounter));
+//			Log.d(TAG, String.format("%s: %d", getName(), mCounter));
 
 			mCounter++;
 		}

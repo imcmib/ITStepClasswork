@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import org.itstep.android.lesson_28_threads.R;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -24,7 +25,9 @@ public class ThreadSyncActivity extends ActionBarActivity {
 
 	private static final String TAG = ThreadSyncActivity.class.getSimpleName();
 
-	private int mCounter;
+	private final Object mLock = new Object();
+
+	private volatile Integer mCounter;
 
 	public static void startActivity(Activity context) {
 	    final Intent intent = new Intent(context, ThreadSyncActivity.class);
@@ -71,6 +74,8 @@ public class ThreadSyncActivity extends ActionBarActivity {
 				mCounter, TimeUnit.NANOSECONDS.toMillis(time)));
 	}
 
+	public static synchronized void main() {}
+
 	public void updateCounter(final int offset) {
 		mCounter += offset;
 	}
@@ -80,7 +85,7 @@ public class ThreadSyncActivity extends ActionBarActivity {
 		private final ThreadSyncActivity mActivity;
 		private final boolean mIncrement;
 
-		private MyThread(ThreadSyncActivity activity,boolean increment) {
+		private MyThread(ThreadSyncActivity activity, boolean increment) {
 			mActivity = activity;
 			mIncrement = increment;
 		}

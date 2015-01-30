@@ -79,6 +79,13 @@ public class FirstExampleActivity extends ActionBarActivity implements View.OnCl
 		mThread1.interrupt();
 		mThread2.interrupt();
 
+//		try {
+//			mThread1.join();
+//			mThread2.join();
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+
 		mTextView1.setText(String.format("Thread 1: " + mThread1.getCounter()));
 		mTextView2.setText(String.format("Thread 2: " + mThread2.getCounter()));
 	}

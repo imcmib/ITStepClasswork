@@ -42,18 +42,18 @@ public class ThreadJoinActivity extends ActionBarActivity {
 	}
 
 	private void onStartButtonClick() {
-		Log.d(TAG, "Thread started");
+		Log.d(TAG, "1 Thread started");
 
 		final BackgroundThread thread = new BackgroundThread();
 		thread.start();
 
 		try {
-			thread.join();
+			thread.join(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
-		Log.d(TAG, "Thread finished");
+		Log.d(TAG, "2 Thread finished");
 	}
 
 	private static class BackgroundThread extends Thread {
@@ -64,6 +64,8 @@ public class ThreadJoinActivity extends ActionBarActivity {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+
+			Log.d(TAG, "3 Thread finished inside");
 		}
 	}
 }

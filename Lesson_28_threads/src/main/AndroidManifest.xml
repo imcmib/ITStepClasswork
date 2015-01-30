@@ -19,6 +19,7 @@
         <activity android:name=".activity.FirstExampleActivity"/>
         <activity android:name=".activity.ThreadJoinActivity"/>
         <activity android:name=".activity.ThreadSyncActivity"/>
+        <activity android:name=".activity.AsyncActivity"/>
     </application>
 
 </manifest>
