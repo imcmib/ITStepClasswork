@@ -28,9 +28,9 @@
         android:text="Files"/>
 
     <Button
-        android:id="@+id/filesPickerButton"
+        android:id="@+id/jsonButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="File picker"/>
+        android:text="Json"/>
 
 </LinearLayout>

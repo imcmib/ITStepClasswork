@@ -17,6 +17,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.textEditorButton).setOnClickListener(this);
         findViewById(R.id.dirsButton).setOnClickListener(this);
         findViewById(R.id.filesButton).setOnClickListener(this);
+        findViewById(R.id.jsonButton).setOnClickListener(this);
     }
 
     @Override
@@ -31,7 +32,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.filesButton:
                 FilesActivity.startActivity(this);
                 break;
-            default:
+			case R.id.jsonButton:
+				JsonActivity.startActivity(this);
+				break;
+			default:
                 Log.w(TAG, "Unhandled onClick event for view: " + getResources()
                         .getResourceName(view.getId()));
                 break;

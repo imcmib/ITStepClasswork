@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -76,30 +77,38 @@ public class TextEditorActivity extends ActionBarActivity implements View.OnClic
     }
 
     private boolean saveFile() {
+		FileOutputStream fos = null;
         try {
             final String text = mEditText.getText().toString();
             final byte[] data = text.getBytes();
 
-            final FileOutputStream fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
+			fos = openFileOutput(FILE_NAME, Context.MODE_PRIVATE);
 
 //            final OutputStreamWriter osw = new OutputStreamWriter(fos);
 //            osw.write(text);
 //            osw.close();
 
             fos.write(data);
-            fos.close();
 
             return true;
         } catch (IOException e) {
             Log.e(TAG, "Error", e);
-        }
+        } finally {
+			try {
+				if (fos != null) {
+					fos.close();
+				}
+			} catch (IOException e) {
+				Log.e(TAG, "Error", e);
+			}
+		}
 
         return false;
     }
 
     private void loadFile() {
         try {
-            final InputStream inputstream = openFileInput(FILE_NAME);
+            final FileInputStream inputstream = openFileInput(FILE_NAME);
             if (inputstream != null) {
                 final InputStreamReader isr = new InputStreamReader(inputstream);
                 final BufferedReader reader = new BufferedReader(isr);

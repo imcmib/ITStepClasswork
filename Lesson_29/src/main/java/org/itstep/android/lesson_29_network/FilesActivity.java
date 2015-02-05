@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.io.File;
+import java.io.IOException;
 
 /*
  * TextEditorActivity.java
@@ -46,7 +47,7 @@ public class FilesActivity extends ActionBarActivity implements View.OnClickList
             }
         }
 
-        final TextView textView = (TextView) findViewById(R.id.textView);
+		final TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(builder);
     }
 
