@@ -21,3 +21,4 @@
 //include ':Lesson_27_shared_prefs'
 //include ':Lesson_28_threads'
 include ':Lesson_29'
+include ':Lesson_30_network'
