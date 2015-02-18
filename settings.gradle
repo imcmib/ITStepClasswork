@@ -20,6 +20,8 @@
 //include ':Lesson_26_image_resources'
 //include ':Lesson_27_shared_prefs'
 //include ':Lesson_28_threads'
-include ':Lesson_29', ':Lesson_31_volley', ':volley'
-include ':Lesson_30_network'
+//include ':Lesson_29', ':Lesson_31_volley'
+include ':Lesson_32_github'
+//include ':Lesson_30_network'
+include ':volley'
 project(':volley').projectDir = new File('libs/volley')
