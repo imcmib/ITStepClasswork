@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ExTextView">
+        <attr name="customFont" format="enum">
+            <enum name="font_1" value="1"/>
+            <enum name="font_2" value="2"/>
+        </attr>
+    </declare-styleable>
+
+</resources>
