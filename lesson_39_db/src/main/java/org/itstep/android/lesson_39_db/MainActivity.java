@@ -10,7 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+import java.util.Random;
+
+public class MainActivity
+        extends ActionBarActivity
+        implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -28,6 +32,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.add_button).setOnClickListener(this);
         findViewById(R.id.read_button).setOnClickListener(this);
         findViewById(R.id.remove_button).setOnClickListener(this);
+        findViewById(R.id.update_button).setOnClickListener(this);
     }
 
     @Override
@@ -42,6 +47,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.remove_button:
                 removeRow();
                 break;
+            case R.id.update_button:
+                updateRow();
+                break;
             default:
                 Log.w(TAG, "Unhandled onClick event for view: "
                         + getResources().getResourceName(view.getId()));
@@ -54,8 +62,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         final ContentValues data = new ContentValues();
         data.put(TestTable.COLUMN_TEXT, value);
+        data.put(TestTable.COLUMN_NUMBER, new Random().nextInt(100));
 
-        DBHelper.getInstance().getDatabase().insert(TestTable.TABLE_NAME, null, data);
+        final long insert = DBHelper.getInstance().getDatabase()
+                                    .insert(TestTable.TABLE_NAME, null, data);
+
+        Toast.makeText(this, String.format("%d inseted", insert),
+                Toast.LENGTH_SHORT).show();
     }
 
     private void readRow() {
@@ -69,14 +82,18 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                                               null);// orderBy
 
         mTextView.setText("");
+
+        final int textIndex = cursor.getColumnIndex(TestTable.COLUMN_TEXT);
+        final int numberIndex = cursor.getColumnIndex(TestTable.COLUMN_NUMBER);
+
         while (cursor.moveToNext()) {
-            final int textIndex = cursor.getColumnIndex(TestTable.COLUMN_TEXT);
             final String value = cursor.getString(textIndex);
+            final int number = cursor.getInt(numberIndex);
 
             if (mTextView.getText().length() > 0) {
                 mTextView.append("\n");
             }
-            mTextView.append(value);
+            mTextView.append(String.format("Value: %s, number: %d", value, number));
         }
         cursor.close();
     }
@@ -90,6 +107,21 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         final int delete = DBHelper.getInstance().getDatabase()
                                    .delete(TestTable.TABLE_NAME, where, whereArgs);
 
-        Toast.makeText(this, String.format("%d rows deleted", delete), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, String.format("%d rows deleted", delete),
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void updateRow() {
+        final String value = mEditText.getText().toString();
+
+        final ContentValues data = new ContentValues();
+        data.put(TestTable.COLUMN_NUMBER, new Random().nextInt(255));
+
+        final String where = TestTable.COLUMN_TEXT + "=?";
+        final String[] whereArgs = new String[] { value };
+
+        DBHelper.getInstance()
+                .getDatabase()
+                .update(TestTable.TABLE_NAME, data, where, whereArgs);
     }
 }

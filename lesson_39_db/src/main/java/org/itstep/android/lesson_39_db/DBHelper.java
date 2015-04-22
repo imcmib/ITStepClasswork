@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "test_db.db";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
 
     private static volatile DBHelper sInstance = null;
 
@@ -39,11 +39,13 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         TestTable.createTable(db);
+        SecondTable.createTable(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         TestTable.upgradeTable(db, oldVersion, newVersion);
+        SecondTable.upgradeTable(db, oldVersion, newVersion);
     }
 
     public SQLiteDatabase getDatabase() {

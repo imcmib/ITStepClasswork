@@ -2,7 +2,6 @@ package org.itstep.android.lesson_39_db;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
-import android.util.Log;
 
 /*
  * TestTable.java
@@ -13,34 +12,24 @@ import android.util.Log;
  * This software is the proprietary information of Provectus IT Company.
  *
  */
-public class TestTable {
+public class SecondTable {
 
-    public static final String TABLE_NAME = "test";
+    public static final String TABLE_NAME = "second";
 
     public static final String COLUMN_TEXT = "name";
-    public static final String COLUMN_NUMBER = "number";
-
-    private static final String TAG = TestTable.class.getSimpleName();
 
 
     public static void createTable(final SQLiteDatabase db) {
-        Log.i(TAG, "createTable");
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
                 + BaseColumns._ID + " integer PRIMARY KEY AUTOINCREMENT"
                 + " ," + COLUMN_TEXT + " text"
-                + " ," + COLUMN_NUMBER + " integer"
                 + ");");
     }
 
     public static void upgradeTable(final SQLiteDatabase db,
                                     final int oldVersion, final int newVersion) {
-        Log.i(TAG, "upgradeTable, old: " + oldVersion + ", new: " + newVersion);
-        if (newVersion > 1) {
-            updateFrom1To2(db);
-        }
-    }
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
 
-    private static void updateFrom1To2(final SQLiteDatabase db) {
-        db.execSQL("ALTER TABLE " + TABLE_NAME + " ADD " + COLUMN_NUMBER + " integer");
+        createTable(db);
     }
 }
