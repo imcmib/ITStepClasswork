@@ -33,4 +33,5 @@
 //include ':Lesson_36_accout_manager'
 //include ':Lesson_37'
 //include ':Lesson_38_recyclerview'
-include ':lesson_39_db', ':Lesson_40'
+//include ':lesson_39_db', ':Lesson_40'
+include ':Lesson_41'
