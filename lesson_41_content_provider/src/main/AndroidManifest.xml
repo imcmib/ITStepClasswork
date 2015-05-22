@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +28,7 @@
         <activity android:name=".PhoneCallsActivity" />
 
         <provider
+            android:exported="true"
             android:name=".MyProvider"
             android:authorities="${applicationId}.provider.MyProvider" />
     </application>

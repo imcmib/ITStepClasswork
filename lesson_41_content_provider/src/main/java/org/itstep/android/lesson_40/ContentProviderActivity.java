@@ -46,6 +46,7 @@ public class ContentProviderActivity extends ActionBarActivity
     private SimpleCursorAdapter mCursorAdapter;
     private EditText mNameEditText;
     private MyObserver mObserver;
+    private MyCursorLoader mMyCursorLoader;
 
     public static void startActivity(Activity context) {
         final Intent intent = new Intent(context, ContentProviderActivity.class);
@@ -83,6 +84,8 @@ public class ContentProviderActivity extends ActionBarActivity
         findViewById(R.id.add_button).setOnClickListener(this);
         findViewById(R.id.update_button).setOnClickListener(this);
         findViewById(R.id.delete_button).setOnClickListener(this);
+
+        mMyCursorLoader = new MyCursorLoader(this);
     }
 
 
@@ -122,7 +125,10 @@ public class ContentProviderActivity extends ActionBarActivity
 
     @Override
     public Loader<Cursor> onCreateLoader(final int id, final Bundle args) {
-        return new MyCursorLoader(this);
+        if (id == LOADER_ID) {
+            return mMyCursorLoader;
+        }
+        return null;
     }
 
     @Override
