@@ -22,8 +22,10 @@ public class SyncUtils {
                                                  .getBoolean(PREF_SETUP_COMPLETE, false);
 
         Account account = GenericAccountService.getAccount();
+
         AccountManager accountManager =
                 (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
+
         if (accountManager.addAccountExplicitly(account, null, null)) {
             ContentResolver.setIsSyncable(account, CONTENT_AUTHORITY, 1);
             ContentResolver.setSyncAutomatically(account, CONTENT_AUTHORITY, true);

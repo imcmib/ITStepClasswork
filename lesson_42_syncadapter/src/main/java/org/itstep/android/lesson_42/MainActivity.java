@@ -3,6 +3,7 @@ package org.itstep.android.lesson_42;
 import android.accounts.Account;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.SyncInfo;
 import android.content.SyncStatusObserver;
 import android.database.ContentObserver;
 import android.database.Cursor;
@@ -23,6 +24,8 @@ import android.widget.ListView;
 import org.itstep.android.lesson_42.accounts.GenericAccountService;
 import org.itstep.android.lesson_42.provider.MyProvider;
 import org.itstep.android.lesson_42.sync.SyncUtils;
+
+import java.util.List;
 
 public class MainActivity extends ActionBarActivity implements
         SwipeRefreshLayout.OnRefreshListener,

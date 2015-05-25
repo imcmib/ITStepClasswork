@@ -21,6 +21,7 @@ class SyncAdapter extends AbstractThreadedSyncAdapter {
 
     public SyncAdapter(Context context, boolean autoInitialize) {
         super(context, autoInitialize);
+
         mContentResolver = context.getContentResolver();
     }
 
