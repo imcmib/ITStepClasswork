@@ -12,19 +12,20 @@ import android.os.IBinder;
 import android.util.Log;
 
 import org.itstep.android.lesson_42.BuildConfig;
+import org.itstep.android.lesson_42.Constants;
 
 public class GenericAccountService extends Service {
 
     private static final String TAG = "GenericAccountService";
 
     private static final String ACCOUNT_TYPE = BuildConfig.APPLICATION_ID;
-    public static final String ACCOUNT_NAME = "sync";
 
     private Authenticator mAuthenticator;
 
     public static Account getAccount() {
-        final String accountName = ACCOUNT_NAME;
-        return new Account(accountName, ACCOUNT_TYPE);
+        final String accountName = Constants.ACCOUNT;
+        final Account account = new Account(accountName, ACCOUNT_TYPE);
+        return account;
     }
 
     @Override
