@@ -45,8 +45,8 @@ public class VideoCaptureActivity extends ActionBarActivity implements View.OnCl
                 dispatchTakeVideoIntent();
                 break;
             default:
-                Log.w(TAG, "Unhandled onClick event for view: " + getResources()
-                        .getResourceName(view.getId()));
+                Log.w(TAG, "Unhandled onClick event for view: "
+                        + getResources().getResourceName(view.getId()));
                 break;
         }
     }
@@ -62,7 +62,8 @@ public class VideoCaptureActivity extends ActionBarActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
             Uri videoUri = data.getData();
-            // TODO [aivanchenko | 27.05.2015 17:28]
+
+            VideoPlaybackActivity.startActivity(this, videoUri);
         }
     }
 }

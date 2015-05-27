@@ -11,18 +11,10 @@ import android.util.Log;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-/*
- * VideoPlaybackActivity.java
- *
- * Created by aivanchenko on 27.05.2015, 17:18
- *
- * Copyright(c) 2015 Provectus IT Company, Inc.  All Rights Reserved.
- * This software is the proprietary information of Provectus IT Company.
- *
- */
 public class VideoPlaybackActivity extends ActionBarActivity {
 
     private static final String TAG = VideoPlaybackActivity.class.getSimpleName();
+    public static final String EXTRA_URI = "EXTRA_URI";
 
     private VideoView myVideoView;
 
@@ -31,7 +23,14 @@ public class VideoPlaybackActivity extends ActionBarActivity {
     private int position = 0;
 
     public static void startActivity(Activity context) {
+        startActivity(context, null);
+    }
+
+    public static void startActivity(Activity context, Uri uri) {
         final Intent intent = new Intent(context, VideoPlaybackActivity.class);
+        if (uri != null) {
+            intent.putExtra(EXTRA_URI, uri);
+        }
 
         context.startActivity(intent);
     }
@@ -40,6 +39,13 @@ public class VideoPlaybackActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_playback);
+
+        final Uri uri;
+        if (getIntent().hasExtra(EXTRA_URI)) {
+            uri = getIntent().getParcelableExtra(EXTRA_URI);
+        } else {
+            uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.kitkat);
+        }
 
         if (mediaControls == null) {
             mediaControls = new MediaController(this);
@@ -54,12 +60,8 @@ public class VideoPlaybackActivity extends ActionBarActivity {
         progressDialog.show();
 
         try {
-            Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.kitkat);
-
             myVideoView.setMediaController(mediaControls);
-            myVideoView.setVideoURI(
-                    uri);
-
+            myVideoView.setVideoURI(uri);
         } catch (Exception e) {
             Log.e(TAG, "Error", e);
         }
