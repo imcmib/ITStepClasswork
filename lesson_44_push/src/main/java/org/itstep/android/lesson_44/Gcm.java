@@ -149,6 +149,8 @@ public abstract class Gcm {
                     if (!TextUtils.isEmpty(registrationId)) {
                         storeRegistrationId(context, registrationId);
                         Log.i(TAG, "Device registered, registration ID=" + registrationId);
+
+                        register(context);
                     }
                 } catch (Exception e) {
                     Log.e(TAG, "Gcm registration failed.", e);
