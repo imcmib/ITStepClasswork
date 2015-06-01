@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal" />
+
+        <Button
+            android:id="@+id/button_satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satellite" />
+
+        <Button
+            android:id="@+id/button_hybrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hybrid" />
+
+        <Button
+            android:id="@+id/button_terrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terrain" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttons">
+
+        <Button
+            android:id="@+id/button_london"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="London"/>
+
+        <Button
+            android:id="@+id/button_street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Street View"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/buttons2" />
+</RelativeLayout>

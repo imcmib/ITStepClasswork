@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MapFragmentActivity"/>
+        <activity android:name=".ProgMapFragmentActivity"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -36,7 +37,8 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBlUgP0QtcBsDEBIEw465zcH9fGXkKanUY"/>
+            android:value="AIzaSyDH3DnYydWtj5WgWNZyzWSRYzrGqNtwd58"/>
+
     </application>
 
 </manifest>

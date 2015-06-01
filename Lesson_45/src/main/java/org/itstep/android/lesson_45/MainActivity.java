@@ -15,6 +15,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		setContentView(R.layout.activity_main);
 
 		findViewById(R.id.button_map_fragment).setOnClickListener(this);
+		findViewById(R.id.button_prog_map_fragment).setOnClickListener(this);
 	}
 
 	@Override
@@ -22,6 +23,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 		switch (view.getId()) {
 			case R.id.button_map_fragment:
 				MapFragmentActivity.startActivity(this);
+				break;
+			case R.id.button_prog_map_fragment:
+				ProgMapFragmentActivity.startActivity(this);
 				break;
 			default:
 				Log.w(TAG, "Unhandled onClick event for view id: " + view.getId());

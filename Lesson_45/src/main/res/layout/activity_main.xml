@@ -15,4 +15,10 @@
         android:layout_height="wrap_content"
         android:text="Map Fragment"/>
 
+    <Button
+        android:id="@+id/button_prog_map_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prog Map Fragment"/>
+
 </LinearLayout>
