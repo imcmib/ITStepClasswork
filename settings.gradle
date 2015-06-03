@@ -35,4 +35,4 @@
 //include ':Lesson_38_recyclerview'
 //include ':lesson_39_db', ':Lesson_40'
 //include ':Lesson_41_content_provider', ':lesson_42_syncadapter', ':lesson_43_audio', ':lesson_44_push'
-include ':Lesson_45'
+include ':Lesson_45', ':Lesson_46_widget'

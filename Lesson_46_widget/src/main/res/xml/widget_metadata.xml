@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/widget"
+    android:configure="org.itstep.android.lesson_46.ConfigActivity"
+    android:minHeight="110dp"
+    android:minWidth="40dp"
+    android:resizeMode="vertical|horizontal"
+    android:updatePeriodMillis="0" />
